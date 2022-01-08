@@ -33,14 +33,7 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <!-- we use cors proxy to avoid cross-origin problems -->
-          <a-assets>
-    <img id="my-image" src="assets/image.jpg">
-    </a-assets>
-
-    <!-- Using the asset management system. -->
-    <a-image src="#my-image"></a-image>
-
+    
 <a-nft
       type='nft'
       url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/card02'
@@ -50,6 +43,7 @@
       smoothThreshold='2'
           >
 </a-nft>
+	  
     <model-viewer preload poster="assets/wait.jpeg" src="assets/robot.gltf" ios-src="assets/robot.usdz" 
 		      auto-rotate camera-controls ar alt="サンプル"></model-viewer>	
     <a-entity camera></a-entity>
