@@ -34,7 +34,14 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
     <!-- we use cors proxy to avoid cross-origin problems -->
-    
+          <a-assets>
+    <img id="my-image" src="image.jpg">
+    </a-assets>
+
+    <!-- Using the asset management system. -->
+    <a-image src="#my-image"></a-image>
+
+
     <a-nft
       type='nft'
       url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/card02'
@@ -43,11 +50,12 @@
       smoothTolerance='0.01'
       smoothThreshold='2'
           >
+
       <a-entity
         gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/toy_biplane.gltf"
-        scale="15 15 15"
-        position="20 20 0"
-        rotation="0 0 -90"
+        scale="5 5 5"
+        position="10 20 0"
+        rotation="0 0 0"
       >
       </a-entity>
     </a-nft>
