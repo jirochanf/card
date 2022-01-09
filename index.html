@@ -1,10 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-<script>
-    document.querySelector('model-viewer').addEventListener('load', (event) => {
-      event.target.activateAR();
-    });
-  </script>
 
 <style>
   .arjs-loader {
@@ -19,7 +14,6 @@
     justify-content: center;
     align-items: center;
   }
-
   .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
@@ -38,26 +32,22 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <model-viewer
-      src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/robot.glb"
-      ios-src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/robot.usdz"
-      ar
-      camera-controls
-      alt="A 3D model"
-      auto-rotate
-          >
-    </model-viewer>
-    
-<a-entity
-  <a-assets>
-    <img id="my-image" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/youtube.png">
-  </a-assets>
-
-  <!-- Using the asset management system. -->
-  <a-image src="#my-image"></a-image>
-       
-</a-entity>
-
+    <!-- we use cors proxy to avoid cross-origin problems -->
+    <a-nft
+      type="nft"
+      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/card02"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      <a-entity
+        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/robot.glb"
+        scale="5 5 5"
+        position="50 150 0"
+      >
+      </a-entity>
+    </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
 </body>
