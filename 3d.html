@@ -1,14 +1,28 @@
-<!DOCTYPE html> 
-<html> 
-  <head> 
-    <meta charset="UTF-8"> 
-    <meta name='viewport' content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'> 
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script> 
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script> 
-  </head> 
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ModerlViewerを使ったWebARページ</title>
+  </head>
   <body>
-    <model-viewer src="./assets/robot.gltf" 
-                  ios-src="./assets/robot.usdz" 
-                  controls auto-rotate ar></model-viewer> 
-  </body> 
-</html> 
+  <script 
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+
+  </script>
+
+    <model-viewer  
+    ar
+    alt="box"
+    src="assets/robot.gltf" 
+    ios-src="assets/robot.usdz" 
+  style="width:400px;height:500px;"                  
+    background-color="#70BCD1"
+    shadow-intensity="0.7"
+    camera-controls
+    interaction-prompt="auto"
+    auto-rotate ar magic-leap>
+    </model-viewer>
+
+  </body>
+</html>
