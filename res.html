@@ -5,35 +5,44 @@
 　<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 　<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
 
-　<script>
-　　AFRAME.registerComponent('change-url',{
-　  schema : {},
-　  init : function(){
-　    this.el.addEventListener('click',function(e){
-　      window.location.href = "https://www.google.co.jp/";
-　    })
-　   }
-　 })
-　</script>
+<script>
+AFRAME.registerComponent('change-url',{
+  schema : {},
+  init : function(){
+    this.el.addEventListener('click',function(e){
+      console.log(e.target.className);
+      if(e.target.className == "AAA"){
+      window.location.href = "https://www.google.co.jp";
+    }
+    if(e.target.className == "BBB"){
+    window.location.href = "https://yahoo.co.jp";
+  }
+    })
+  }
+})
+</script>
 </head>
 
 <body>
+
   <a-assets>
     <img id="AAA" src="assets/youtube.png">
     <img id="BBB" src="assets/tel.jpeg">
-  </a-assets>
+      </a-assets>
 
 　<a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
 　<a-marker preset="custom" type="pattern" 
-url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/pattern-hiro.patt" material arjs-anchor arjs-hit-testing>
+           url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/pattern-hiro.patt" 
+           material arjs-anchor arjs-hit-testing>
 
-      <a-image class="AAA" src="#AAA" position="-0.5 0 0" rotation="-90 0 0" change-url material geometry></a-image>
-      <a-image class="BBB" src="#BBB" position="0.5 0 0" rotation="-90 0 0" change-url material geometry></a-image>
+      <a-image class="AAA" src="#AAA" position="-1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
+      <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
 
   </a-marker>
 
   <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
   <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
 </a-scene>
+
 </body>
 </html>
