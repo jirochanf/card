@@ -8,21 +8,25 @@
   <script 
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
-
+</script>
+<!--  3Ｄのロード完了後　3Dを表示-->
+    <script>
+    document.querySelector('model-viewer').addEventListener('load', (event) => {
+      event.target.activateAR();
+    });
   </script>
 
     <model-viewer  
     ar
-    alt="box"
+    alt="benzモデル"
     src="assets/robot.gltf" 
     ios-src="assets/robot.usdz" 
-  style="width:400px;height:500px;"                  
+    style="width:400px;height:500px;" 
     background-color="#70BCD1"
     shadow-intensity="0.7"
     camera-controls
     interaction-prompt="auto"
     auto-rotate ar magic-leap>
     </model-viewer>
-
   </body>
 </html>
