@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARテスト</title>
+
+  <!-- AFRAME読み込み -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <!-- AR.js読み込み -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+</head>
+<body style="margin : 0px; overflow: hidden;">
+  <!-- ライブラリの読み込みが完了するまでのローディングメッセージ -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+  <a-scene embedded vr-mode-ui="enabled:false;" arjs="debugUIEnabled:true; detectionMode: mono_and_matrix; matrixCodeType: 3x3; patternRatio:0.6">
+    <!-- 名刺の画像を準備 -->
+    <a-assets>
+      <img id="front" src="image.jpg" />
+    </a-assets>
+    
+    <!-- マーカーのタグの中に表示させたいオブジェクトをマークアップする -->
+    <a-marker type='pattern' url='pattern-hiro.patt'>
+      <a-plane
+        position="0 .75 0" 
+        rotation="0 0 0"
+        width="1.75"
+        material="src: #front;">
+      </a-plane>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
