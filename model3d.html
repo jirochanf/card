@@ -2,23 +2,16 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>ModerlViewerを使ったWebARページ</title>
+    <title>ModerlViewerを使った3Dモデル表示</title>
   </head>
   <body>
   <script 
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
 </script>
-<!--  3Ｄのロード完了後　3Dを表示-->
-    <script>
-    document.querySelector('model-viewer').addEventListener('load', (event) => {
-      event.target.activateAR();
-    });
-  </script>
-
     <model-viewer  
     ar
-    alt="benzモデル"
+    alt="robotモデル"
     src="assets/robot.gltf" 
     ios-src="assets/robot.usdz" 
     style="width:400px;height:500px;" 
