@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
   </head>
   <body>
-    <a-scene>
+
  <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -16,14 +16,15 @@
             embedded
             gesture-detector
         >
-<a-camera id="my_camera">
-	<a-cursor></a-cursor>
-</a-camera>
+		<a-camera id="my_camera">
+		<a-cursor></a-cursor>
+		</a-camera>
 
 	 <a-assets>
-        <img id="image" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/image.jpg">
-      </a-assets>
-        <a-image src="#image"></a-image>
+         <img id="image" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/image.jpg">
+         </a-assets>
+        
+	   <a-image src="#image"></a-image>
 
     </a-scene>
   </body>
