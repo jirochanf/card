@@ -30,7 +30,9 @@ AFRAME.registerComponent('change-url',{
     <img id="BBB" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/tel.jpeg">
       </a-assets>
 
+    
 　<a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
+ 
    
 <a-nft
             type='nft'
@@ -40,10 +42,19 @@ AFRAME.registerComponent('change-url',{
             smoothTolerance='0.01'
             smoothThreshold='5'
           >   
-　
+
+       <a-plane
+        position="0 .75 0"
+        rotation="0 0 0"
+        width="1.75"
+        material="src: #AAA;">
+      </a-plane>
+<!--  
       <a-image class="AAA" src="#AAA" position="-1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
       <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
-</a-nft>
+-->
+   
+   </a-nft>
 
   <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
   <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
