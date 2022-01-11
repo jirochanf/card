@@ -15,14 +15,15 @@
     <a-scene embedded arjs="debugUIEnabled:false;">
 
       <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
-      <!--  <a-marker preset="hiro">  -->
-        <a-marker type="pattern" url="assets/meishi.patt">
-
-        <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
+      <!-- <a-marker type="pattern" url="assets/meishi.patt">   -->
+        <a-marker preset="hiro">
+ 
+          <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
         <a-image src="assets/youtube.png" position="1 1 -1" rotion="0 0 0"></a-image>
         <a-image src="assets/tel.jpeg" position="1 1 0" rotion="0 0 0"></a-image>        
         <a-image src="assets/image.jpg" position="1 1 1" rotion="0 0 0"></a-image>
-      </a-marker>
+        
+        </a-marker>
 
       <!-- AR用のカメラを置く -->
       <a-entity camera></a-entity>
