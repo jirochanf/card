@@ -5,7 +5,35 @@
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-    <script>
+    <body style="margin : 0px; overflow: hidden;">
+
+    <a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
+
+        <a-assets>
+        <img id="AAA" src="assets/youtube.png">
+        <img id="BBB" src="assets/tel.jpeg">
+        <img id="CCC" src="assets/image.jpg">
+      </a-assets>    
+    
+      <a-marker preset="hiro">
+             
+          <a-image class="AAA" src="#AAA" position="1 0 -2" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="CCC" src="#CCC" position="1 0 2" rotation="-90 0 0" change-url material geometry></a-image>
+
+       
+    </a-marker>
+
+            <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+  　　　　<a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+
+        
+</a-scene>
+    <div style="position: fixed; bottom: 250px;">
+    <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>
+    </div>
+
+        <script>
 AFRAME.registerComponent('change-url',{
   schema : {},
   init : function(){
@@ -20,38 +48,8 @@ AFRAME.registerComponent('change-url',{
     })
   }
 })
-</script>
-    
-    
-    <body style="margin : 0px; overflow: hidden;">
-
-<a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
-    
-    <div style="position: fixed; bottom: 250px;">
-    <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>
-    </div>
-
-  
-    <a-assets>
-        <img id="AAA" src="assets/youtube.png">
-        <img id="BBB" src="assets/tel.jpeg">
-        <img id="CCC" src="assets/image.jpg">
-      </a-assets>    
-    
-      <a-marker preset="hiro">
-             
-          <a-image class="AAA" src="#AAA" position="1 0 -2" rotation="-90 0 0" change-url material geometry></a-image>
-      <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
-      <a-image class="CCC" src="#CCC" position="1 0 2" rotation="-90 0 0" change-url material geometry></a-image>
-
-    <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-  　　　　<a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-       
-    
-    </a-marker>
-
-    
-</a-scene>
-       
+</script> 
+        
     </body>
+    
 </html>
