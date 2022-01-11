@@ -35,13 +35,13 @@ AFRAME.registerComponent('change-url',{
     
       <a-marker preset="hiro">
              
-      <a-image class="AAA" src="#AAA" position="-1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
-      <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
+      <a-image class="AAA" src="#AAA" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
+      <a-image class="BBB" src="#BBB" position="2 0 0" rotation="-90 0 0" change-url material geometry></a-image>
 
        </a-marker>
 
     <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-  <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+  　　　　<a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
   
     <a-entity position="0 1.8 4">
         <a-entity camera look-controls mouse-cursor>
