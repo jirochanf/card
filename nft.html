@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>A-Frame で超簡単 AR</title>
-  </head>
-  <body style="margin:0px; overflow:hidden;">
-    <!-- NTF　画像の認証 -->
-    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-    <!-- AR.js ライブラリの読み込み -->
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <!-- ntfスクリプトの読み込み -->
-　　　　　　　　<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIは非表示） -->
-    <a-scene embedded arjs="debugUIEnabled:false;">
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
 
-      <a-nft
+<body style="margin : 0px; overflow: hidden;">
+  <!-- minimal loader shown until image descriptors are loaded -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <!-- we use cors proxy to avoid cross-origin problems -->
+    
+    <a-nft
       type='nft'
       url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/card02'
       smooth='true'
@@ -25,16 +43,14 @@
       smoothTolerance='0.01'
       smoothThreshold='2'
           >
-          <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-        <a-image src="assets/youtube.png" position="1 1 -1" rotion="0 0 0"></a-image>
+      <a-entity>
+      <a-image src="assets/youtube.png" position="1 1 -1" rotion="0 0 0"></a-image>
         <a-image src="assets/tel.jpeg" position="1 1 0" rotion="0 0 0"></a-image>        
         <a-image src="assets/image.jpg" position="1 1 1" rotion="0 0 0"></a-image>
-        
-        </a-nft>
 
-      <!-- AR用のカメラを置く -->
-      <a-entity camera></a-entity>
-
-    </a-scene>
-  </body>
-</html>
+      
+      </a-entity>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
