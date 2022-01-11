@@ -24,25 +24,20 @@ AFRAME.registerComponent('change-url',{
     
     <body style="margin : 0px; overflow: hidden;">
 
-     <a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
-        <a-marker preset="hiro">
-            
-    　　　<a-assets>
-    <img id="AAA" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/youtube.png">
-    <img id="BBB" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/tel.jpeg">
-    <img id="CCC" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/image.jpeg">
-      </a-assets>           
-            
-  <!--          
-        <a-image src=#AAA position="1 1 -1" rotion="0 0 0"></a-image>
-        <a-image src="assets/tel.jpeg" position="1 1 0" rotion="0 0 0"></a-image>        
-        <a-image src="assets/image.jpg" position="1 1 1" rotion="0 0 0"></a-image>
-  -->
- 
+<a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
+  
+    <a-assets>
+        <img id="AAA" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/youtube.png">
+        <img id="BBB" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/tel.jpeg">
+        <img id="CCC" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/image.jpeg">
+      </a-assets>    
+    
+      <a-marker preset="hiro">
+             
       <a-image class="AAA" src="#AAA" position="-1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
       <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
 
-  </a-marker>
+       </a-marker>
 
   <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
   <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
