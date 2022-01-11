@@ -1,63 +1,57 @@
+<!-- hiroマーカー　3D  -->
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AnimationTest</title>
-<script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<script src="js/aframe-extras.js"></script>
-<script src="js/aframe-text-geometry-component.min.js"></script>
-<script src="./js/aframe-ar.js"></script>
-<script src="./js/jquery-3.2.1.min.js"></script>
+<html>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-</head>
-<body style="margin:0px; overflow:hidden;">
-<a-scene embedded arjs="debugUIEnabled:false;"  renderer="gammaOutput: true;" vr-mode-ui="enabled: false">
+    <body style="margin : 0px; overflow: hidden;">
 
-    <a-assets>
-        <a-asset-item id="model" src="https://cdn.glitch.com/e982bdcd-1785-4dcf-bd6b-20276b594293%2Fscene1.glb?v=1594279817621"></a-asset-item>
-        <a-asset-item id="model2" src="https://cdn.glitch.com/e982bdcd-1785-4dcf-bd6b-20276b594293%2Fen.glb?v=1602566579902"></a-asset-item> 
-    </a-assets>
+    <a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
 
-    <a-marker preset="hiro">
-        <!-- id、visible 要素を追加 -->
-        <a-entity id="armodel" visible="false" gltf-model="#model" scale="0.0001 0.0001 0.0001" rotation="0 0 0" position="0 0.5 0" animation-mixer="clip:*" ></a-entity>
-    </a-marker>
+        <a-assets>
+        <img id="AAA" src="assets/youtube.png">
+        <img id="BBB" src="assets/tel.jpeg">
+        <img id="CCC" src="assets/image.jpg">
+      </a-assets>    
+    
+      <a-marker preset="hiro">
+             
+          <a-image class="AAA" src="#AAA" position="1 0 -2" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="CCC" src="#CCC" position="1 0 2" rotation="-90 0 0" change-url material geometry></a-image>
 
-    <a-entity camera></a-entity>
+        </a-marker>
+        
+          <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+　　　　        <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+
+            
 </a-scene>
+    <div style="position: fixed; bottom: 250px;">
+    <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>
+    </div>
 
-<div style="position: fixed; bottom: 150px;">
-    <!-- onclickの指定が誤っているので書き直し -->
-    <!-- <input type="button" id="b1" value="change" onclick="click1"> -->
-    <!-- <button type=“button” onclick="location.href='https://www.sejuku.net'">遷移！</button> -->
-    <input type="button" id="b1" value="change" onclick="click1();">
-</div>
-
-<script>
-    // 不要と思われたのでコメントアウト。初期表示状態は、「a-entity」の要素で指定する様に変更済み
-    // //初期表示は非表示
-    // document.getElementById("model2").style.visibility ="hidden";
-
-    function click1(){
-
-        console.log("click1");
-
-        // Entityを取得
-        var el = document.querySelector('#armodel');
-        console.log(el.getAttribute('visible'));
-
-        // 表示中の場合
-        if (el.getAttribute('visible')) {
-            // 非表示に切り替え
-            el.setAttribute('visible', false);
-        } else {
-            // 表示に切り替え
-            el.setAttribute('visible', true);
-        }
+        <script>
+AFRAME.registerComponent('change-url',{
+  schema : {},
+  init : function(){
+    this.el.addEventListener('click',function(e){
+      console.log(e.target.className);
+      if(e.target.className == "AAA"){
+      window.location.href = "https://www.google.co.jp";
     }
-</script>
-
-</body>
+    if(e.target.className == "BBB"){
+    window.location.href = "https://yahoo.co.jp";
+  }
+    if(e.target.className == "CCC"){
+    window.location.href = "https://netken.info";
+  }
+    })
+  }
+})
+</script> 
+        
+    </body>
+    
 </html>
