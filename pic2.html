@@ -4,25 +4,55 @@
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script>
+AFRAME.registerComponent('change-url',{
+  schema : {},
+  init : function(){
+    this.el.addEventListener('click',function(e){
+      console.log(e.target.className);
+      if(e.target.className == "AAA"){
+      window.location.href = "https://www.google.co.jp";
+    }
+    if(e.target.className == "BBB"){
+    window.location.href = "https://yahoo.co.jp";
+  }
+        if(e.target.className == "CCC"){
+    window.location.href = "https://netken.info";
+  }
+    })
+  }
+})
+</script>
+    
+    
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
-        <a-marker preset="hiro">
+   <a-marker preset="hiro">
+    　　　<a-assets>
+    <img id="AAA" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/youtube.png">
+    <img id="BBB" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/tel.jpeg">
+    <img id="CCC" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/image.jpeg">
+      </a-assets>           
             
-  <a-image src="assets/youtube.png" position="1 1 -1" rotion="0 0 0"></a-image>
+  <!--          
+        <a-image src=#AAA position="1 1 -1" rotion="0 0 0"></a-image>
         <a-image src="assets/tel.jpeg" position="1 1 0" rotion="0 0 0"></a-image>        
         <a-image src="assets/image.jpg" position="1 1 1" rotion="0 0 0"></a-image>
-                    
-<!--  3D表示
-            <a-entity
-            position="0 0 0"
-            rotation="-30 0 0"
-            scale="1 1 1"
-            gltf-model="assets/benz.gltf"
-            ></a-entity>
--->
+  -->
+            
+     <a-image class="AAA" src="#AAA" position="-1 1 -1" rotation="0 0 0" change-url material geometry></a-image>
+     <a-image class="BBB" src="#BBB" position="1 1 0" rotation="0 0 0" change-url material geometry></a-image>
+       <a-image class="CCC" src="#CCC" position="1 1 1" rotation="0 0 0" change-url material geometry></a-image>
 
+
+     <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+     <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+      <a-entity camera raycaster= "objects: .CCC" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+           
         </a-marker>
+            
         <a-entity camera></a-entity>
+        
         </a-scene>
     </body>
 </html>
