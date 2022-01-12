@@ -6,6 +6,28 @@
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    <script>        
+AFRAME.registerComponent('click-change', {
+  init: function () {
+    this.el.addEventListener('click', function (event) {
+    //クリック時の処理
+        console.log(e.target.className);
+      if(e.target.className == "AAA"){
+      window.location.href = "https://www.google.co.jp";
+    }
+    if(e.target.className == "BBB"){
+    window.location.href = "https://yahoo.co.jp";
+  }
+    if(e.target.className == "CCC"){
+    window.location.href = "https://netken.info";
+  }
+    });
+  }
+});        
+</script> 
+    
+    
+    
 
     <body style="margin : 0px; overflow: hidden;">
 
@@ -22,9 +44,9 @@
     
       <a-marker preset="hiro">
              
-          <a-image class="AAA" src="#AAA" position="1 0 -1.5" rotation="-90 0 0" change-url material geometry></a-image>
-          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
-          <a-image class="CCC" src="#CCC" position="1 0 1.5" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="AAA" src="#AAA" position="1 0 -1.5" rotation="-90 0 0" click-change material geometry></a-image>
+          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" click-change material geometry></a-image>
+          <a-image class="CCC" src="#CCC" position="1 0 1.5" rotation="-90 0 0" click-change material geometry></a-image>
           <a-entity
                     id="bowser-model"
                     scale="0.8 0.8 0.8"
@@ -64,46 +86,8 @@
 </form>
         </div>
  
-<script>        
-AFRAME.registerComponent('click-change', {
-  init: function () {
-    this.el.addEventListener('click', function (event) {
-    //クリック時の処理
-        console.log(e.target.className);
-      if(e.target.className == "AAA"){
-      window.location.href = "https://www.google.co.jp";
-    }
-    if(e.target.className == "BBB"){
-    window.location.href = "https://yahoo.co.jp";
-  }
-    if(e.target.className == "CCC"){
-    window.location.href = "https://netken.info";
-  }
-    });
-  }
-});        
-</script> 
-    
-        <script>
-AFRAME.registerComponent('change-url',{
-  schema : {},
-  init : function(){
-    this.el.addEventListener('click',function(e){
-      console.log(e.target.className);
-      if(e.target.className == "AAA"){
-      window.location.href = "https://www.google.co.jp";
-    }
-    if(e.target.className == "BBB"){
-    window.location.href = "https://yahoo.co.jp";
-  }
-    if(e.target.className == "CCC"){
-    window.location.href = "https://netken.info";
-  }
-    })
-  }
-})
-</script> 
-        
+
+
     </body>
     
 </html>
