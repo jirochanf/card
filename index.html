@@ -1,59 +1,74 @@
+<!-- hiroマーカー　3D  -->
+<!DOCTYPE html>
 <html>
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
 
-<style>
-  .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    <body style="margin : 0px; overflow: hidden;">
 
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  }
-</style>
+    <a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
 
-<body style="margin : 0px; overflow: hidden;">
-  <!-- minimal loader shown until image descriptors are loaded -->
-  <div class="arjs-loader">
-    <div>Loading, please wait...</div>
-  </div>
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
-    <!-- we use cors proxy to avoid cross-origin problems -->
+        <a-assets>
+            
+        <img id="AAA" src="assets/youtube.png">
+        <img id="BBB" src="assets/tel.jpeg">
+        <img id="CCC" src="assets/image.jpg">
+        <a-asset-item id="animated-asset" src="assets/benz.gltf"></a-asset-item>    
+            
+      </a-assets>    
     
-    <a-nft
-      type='nft'
-      url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/ar/master/assets/ozujo3'
-      smooth='true'
-      smoothCount='5'
-      smoothTolerance='0.01'
-      smoothThreshold='2'
-          >
-      <a-entity
-        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/jirochanf/card/master/assets/robot.gltf"
-        scale="15 15 15"
-        position="20 20 0"
-        rotation="0 0 -90"
-      >
-      </a-entity>
-    </a-nft>
-    <a-entity camera></a-entity>
-  </a-scene>
-</body>
+      <a-marker preset="hiro">
+             
+          <a-image class="AAA" src="#AAA" position="1 0 -2" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="CCC" src="#CCC" position="1 0 2" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-entity
+                    id="bowser-model"
+                    scale="0.8 0.8 0.8"
+                          position="2 -2 -4"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+        </a-marker>
+        
+          <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+　　　　        <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
 
-  </html>
+            
+</a-scene>
+        
+    <div style="position: fixed; bottom: 50px;">
+ <!--   <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>  -->
+ <input type="button" name="mypage" id="mypage" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
+    </div>
+        
+  <a href=”mailto:xxxx@mailmarketing.jp”>メールはこちら</a>
+        
+        <script>
+AFRAME.registerComponent('change-url',{
+  schema : {},
+  init : function(){
+    this.el.addEventListener('click',function(e){
+      console.log(e.target.className);
+      if(e.target.className == "AAA"){
+      window.location.href = "https://www.google.co.jp";
+    }
+    if(e.target.className == "BBB"){
+    window.location.href = "https://yahoo.co.jp";
+  }
+    if(e.target.className == "CCC"){
+    window.location.href = "https://netken.info";
+  }
+    })
+  }
+})
+</script> 
+        
+    </body>
+    
+</html>
