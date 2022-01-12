@@ -36,8 +36,15 @@
                 ></a-entity>
         </a-marker>
         
-          <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-　　　　        <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+          
+        <a-entity
+    id="button"
+    click-change
+    geometry="primitive: ring; radiusInner: 0.75; radiusOuter: 0.8"
+    material="color: white; side: double;"
+    raycaster="objects: .clickable"
+    >
+</a-entity>
         
 </a-scene>
         
@@ -56,7 +63,27 @@
 <input type="button" value="Tel" onclick="location.href='tel:08065637911'">
 </form>
         </div>
-        
+ 
+<script>        
+AFRAME.registerComponent('click-change', {
+  init: function () {
+    this.el.addEventListener('click', function (event) {
+    //クリック時の処理
+        console.log(e.target.className);
+      if(e.target.className == "AAA"){
+      window.location.href = "https://www.google.co.jp";
+    }
+    if(e.target.className == "BBB"){
+    window.location.href = "https://yahoo.co.jp";
+  }
+    if(e.target.className == "CCC"){
+    window.location.href = "https://netken.info";
+  }
+    });
+  }
+});        
+</script> 
+    
         <script>
 AFRAME.registerComponent('change-url',{
   schema : {},
