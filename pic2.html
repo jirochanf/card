@@ -8,11 +8,11 @@
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     
     <script>
+        //video表示スクリプト
             AFRAME.registerComponent('videohandler', {
                 init: function () {
                     var marker = this.el;
                     this.vid = document.querySelector("#vid");
-
                     marker.addEventListener('markerFound', function () {
                         this.toggle = true;
                         this.vid.play();
@@ -26,7 +26,8 @@
         </script>
     </head>
     
-    <script>        
+    <script>  
+        //クリック後のアクションスクリプト
   AFRAME.registerComponent('click-change', {
   init: function () {
     this.el.addEventListener('click', function (event) {
@@ -49,7 +50,6 @@
         >
 
         <a-assets>
-            
         <img id="AAA" src="assets/youtube.png">
         <img id="BBB" src="assets/tel.jpeg">
         <img id="CCC" src="assets/image.jpg">
@@ -70,12 +70,11 @@
       </a-assets>    
     
       <a-marker preset="hiro">
-             
+          
           <a-image class="AAA" src="#AAA" position="-1 0 -2" rotation="-90 0 0" click-change material geometry></a-image>
           <a-image class="BBB" src="#BBB" position="-1 0 0" rotation="-90 0 0" click-change material geometry></a-image>
           <a-image class="CCC" src="#CCC" position="-1 0 2" rotation="-90 0 0" click-change material geometry></a-image>
-         
-               <a-entity
+          <a-entity
                     id="bowser-model"
                     scale="0.8 0.8 0.8"
                     position="2 -2 -2"
@@ -83,7 +82,7 @@
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
-                ></a-entity> 
+           ></a-entity> 
           
           
           <a-video
@@ -97,38 +96,37 @@
           
    
           <a-entity
-    id="button"
-    click-change
-    geometry="primitive: ring; radiusInner: 0.75; radiusOuter: 0.8"
-    material="color: white; side: double;"
-    raycaster="objects: .clickable"
-    >
-</a-entity>
-          
+            id="button"
+            click-change
+            geometry="primitive: ring; radiusInner: 0.75; radiusOuter: 0.8"
+            material="color: white; side: double;"
+            raycaster="objects: .clickable"
+             >
+           </a-entity>
           
          </a-marker>
         
-        
 </a-scene>
         
+<!--   画面下部にボタンを設置  -->
+        
     <div style="position: fixed; bottom: 50px;left:10px;">
- <!--   <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>  -->
- <input type="button" name="mypage" id="mypage" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
+     <!--   <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>  -->
+    <input type="button" name="mypage" id="mypage" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
     </div>
         
     <div style="position: fixed; bottom: 50px;left:100px;">
- <form>
-<input type="button" value="E-Mail" onclick="location.href='mailto:fujiwara@yomde.net'">
-</form>
-        </div>
-        <div style="position: fixed; bottom: 50px;left:200px;">
- <form>
-<input type="button" value="Tel" onclick="location.href='tel:08065637911'">
-</form>
-        </div>
+    <form>
+    <input type="button" value="E-Mail" onclick="location.href='mailto:fujiwara@yomde.net'">
+    </form>
+        
+    </div>
+     <div style="position: fixed; bottom: 50px;left:200px;">
+     <form>
+    <input type="button" value="Tel" onclick="location.href='tel:08065637911'">
+    </form>
+     </div>
  
-
-
     </body>
     
 </html>
