@@ -17,7 +17,6 @@
                         this.toggle = true;
                         this.vid.play();
                     }.bind(this));
-
                     marker.addEventListener('markerLost', function () {
                         this.toggle = false;
                         this.vid.pause();
@@ -28,21 +27,12 @@
     </head>
     
     <script>        
-        AFRAME.registerComponent('click-change', {
-            init: function () {
-            this.el.addEventListener('click', function (event) {
+  AFRAME.registerComponent('click-change', {
+  init: function () {
+    this.el.addEventListener('click', function (event) {
     //クリック時の処理
- console.log(e.target.className);
-      if(e.target.className == "AAA"){
-      window.location.href = "https://www.google.co.jp";
-    }
-    if(e.target.className == "BBB"){
-    window.location.href = "https://yahoo.co.jp";
-  }
-    if(e.target.className == "CCC"){
-    window.location.href = "https://netken.info";
-  }
-            });
+    window.location.href = "https://www.google.co.jp";    
+    });
   }
 });        
 </script> 
@@ -104,6 +94,16 @@
                     class="clickable"
                     gesture-handler
                 ></a-video>
+          
+   
+          <a-entity
+    id="button"
+    click-change
+    geometry="primitive: ring; radiusInner: 0.75; radiusOuter: 0.8"
+    material="color: white; side: double;"
+    raycaster="objects: .clickable"
+    >
+</a-entity>
           
           
          </a-marker>
