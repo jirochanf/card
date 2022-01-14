@@ -1,33 +1,132 @@
+<!-- hiroマーカー　3D  -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>A-Frame で超簡単 AR</title>
-  </head>
-  <body style="margin:0px; overflow:hidden;">
-    <!-- A-Frame ライブラリの読み込み -->
-    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-    <!-- AR.js ライブラリの読み込み -->
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    <script>
+        //video表示スクリプト
+            AFRAME.registerComponent('videohandler', {
+                init: function () {
+                    var marker = this.el;
+                    this.vid = document.querySelector("#vid");
+                    marker.addEventListener('markerFound', function () {
+                        this.toggle = true;
+                        this.vid.play();
+                    }.bind(this));
+                    marker.addEventListener('markerLost', function () {
+                        this.toggle = false;
+                        this.vid.pause();
+                    }.bind(this));
+                },
+            });
+        </script>
+    </head>
 
-    <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIは非表示） -->
-    <a-scene embedded arjs="debugUIEnabled:false;">
+    <body style="margin : 0px; overflow: hidden;">
+        
+    <a-scene
+            vr-mode-ui="enabled: false"
+            loading-screen="enabled: false;"
+            arjs='sourceType: webcam; debugUIEnabled: false;'
+            id="scene"
+            embedded
+            gesture-detector
+        >
 
-      <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
-      <!-- <a-marker type="pattern" url="assets/meishi.patt">   -->
-        <a-marker preset="hiro">
- 
-          <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-        <a-image src="assets/youtube.png" position="1 1 -1" rotion="0 0 0"></a-image>
-        <a-image src="assets/tel.jpeg" position="1 1 0" rotion="0 0 0"></a-image>        
-        <a-image src="assets/image.jpg" position="1 1 1" rotion="0 0 0"></a-image>
+    
+        <a-assets>
+            
+        <img id="AAA" src="assets/youtube.png">
+        <img id="BBB" src="assets/tel.jpeg">
+        <img id="CCC" src="assets/image.jpg">
+        <a-asset-item id="animated-asset" src="assets/benz.gltf"></a-asset-item> 
+        <video
+                    id="vid"
+                    src="assets/happy.mp4"
+                    preload="auto"
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
+            
+      </a-assets>    
+    
+      <a-marker preset="hiro">
+          
+          <a-entity cursor="rayOrigin: mouse"></a-entity>    
+             
+          <a-image class="AAA" src="#AAA" position="1 0 -1.5" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-image class="CCC" src="#CCC" position="1 0 1.5" rotation="-90 0 0" change-url material geometry></a-image>
+          <a-entity
+                    id="bowser-model"
+                    scale="0.8 0.8 0.8"
+                          position="2 -2 -4"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+           <a-video
+                    src="#vid"
+                    scale="2 2 2"
+                    position="2 0 0"
+                    rotation="-90 0 0"
+                    class="clickable"
+                    gesture-handler
+                ></a-video>
         
         </a-marker>
+        
+          <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+　　　　        <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
 
-      <!-- AR用のカメラを置く -->
-      <a-entity camera></a-entity>
-
-    </a-scene>
-  </body>
+            
+</a-scene>
+        
+    <div style="position: fixed; bottom: 50px;left:10px;">
+ <!--   <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>  -->
+ <input type="button" name="mypage" id="mypage" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
+    </div>
+        
+    <div style="position: fixed; bottom: 50px;left:100px;">
+ <form>
+<input type="button" value="E-Mail" onclick="location.href='mailto:fujiwara@yomde.net'">
+</form>
+        </div>
+        <div style="position: fixed; bottom: 50px;left:200px;">
+ <form>
+<input type="button" value="Tel" onclick="location.href='tel:08065637911'">
+</form>
+        </div>
+        
+        <script>
+AFRAME.registerComponent('change-url',{
+  schema : {},
+  init : function(){
+    this.el.addEventListener('click',function(e){
+      console.log(e.target.className);
+      if(e.target.className == "AAA"){
+      window.location.href = "https://www.google.co.jp";
+    }
+    if(e.target.className == "BBB"){
+    window.location.href = "https://yahoo.co.jp";
+  }
+    if(e.target.className == "CCC"){
+    window.location.href = "https://netken.info";
+  }
+    })
+  }
+})
+</script> 
+        
+    </body>
+    
 </html>
