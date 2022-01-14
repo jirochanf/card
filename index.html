@@ -23,6 +23,27 @@
                 },
             });
         </script>
+    
+            <script>
+AFRAME.registerComponent('change-url',{
+  schema : {},
+  init : function(){
+    this.el.addEventListener('click',function(e){
+      console.log(e.target.className);
+      if(e.target.className == "AAA"){
+      window.location.href = "https://www.google.co.jp";
+    }
+    if(e.target.className == "BBB"){
+    window.location.href = "https://yahoo.co.jp";
+  }
+    if(e.target.className == "CCC"){
+    window.location.href = "https://netken.info";
+  }
+    })
+  }
+})
+</script> 
+    
     </head>
 
     <body style="margin : 0px; overflow: hidden;">
@@ -107,25 +128,7 @@
 </form>
         </div>
         
-        <script>
-AFRAME.registerComponent('change-url',{
-  schema : {},
-  init : function(){
-    this.el.addEventListener('click',function(e){
-      console.log(e.target.className);
-      if(e.target.className == "AAA"){
-      window.location.href = "https://www.google.co.jp";
-    }
-    if(e.target.className == "BBB"){
-    window.location.href = "https://yahoo.co.jp";
-  }
-    if(e.target.className == "CCC"){
-    window.location.href = "https://netken.info";
-  }
-    })
-  }
-})
-</script> 
+
         
     </body>
     
