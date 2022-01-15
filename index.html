@@ -28,8 +28,10 @@
 AFRAME.registerComponent('click-change', {
   init: function () {
     this.el.addEventListener('click', function (event) {
-    //クリック時の処理
         alert('Click');
+    });
+    }
+  });
             </script> 
     
     </head>
@@ -70,7 +72,7 @@ AFRAME.registerComponent('click-change', {
           
           <a-entity cursor="rayOrigin: mouse"></a-entity>    
              
-          <a-image class="AAA" src="#AAA" position="1 0 0" rotation="-90 0 0" click-change material geometry></a-image>
+          <a-image click-change　class="AAA" src="#AAA" position="1 0 0" rotation="-90 0 0"  material geometry></a-image>
 <!--          <a-image class="AAA" src="#AAA" position="1 0 0" rotation="-90 0 0" change-url　material geometry></a-image>
           <a-image class="CCC" src="#CCC" position="1 0 1.5" rotation="-90 0 0" change-url　 material geometry></a-image>    -->
           <a-entity
