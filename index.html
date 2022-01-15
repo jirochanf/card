@@ -57,7 +57,6 @@ AFRAME.registerComponent('change-url',{
             gesture-detector
         >
 
-    
         <a-assets>
             
         <img id="AAA" src="assets/youtube.png">
@@ -104,9 +103,7 @@ AFRAME.registerComponent('change-url',{
                     gesture-handler
                 ></a-video>
  
-          <input type="button" name="mypage" id="mypage" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
- 
-        </a-marker>
+         </a-marker>
         
           <a-entity camera raycaster= "objects: .AAA" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
 　　　　        <a-entity camera raycaster= "objects: .BBB" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
@@ -116,7 +113,9 @@ AFRAME.registerComponent('change-url',{
     <div style="position: fixed; bottom: 50px;left:10px;">
  <!--   <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>  -->
  <input type="button" name="mypage" id="mypage" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
-    </div>
+ <!--  <input type="button" name="mypage" id="mypage" value="My HP" onClick="window.open('https://netken.info/','_blank')" /> -->
+<input type="image" name="mypage" id="mypage" src="assets/image.jpg" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
+        </div>
         
     <div style="position: fixed; bottom: 50px;left:100px;">
  <form>
