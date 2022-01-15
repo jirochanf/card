@@ -101,10 +101,9 @@ AFRAME.registerComponent('clickhandler', {
     
       <a-marker preset="hiro">
     
-       <a-entity cursor="rayOrigin: mouse"></a-entity>  
  <!--      <a-image src="img1.png" clickhandler="txt:image1"></a-image>   -->
 
-       <a-image　class="AAA" src="#AAA" position="1 -4 0" rotation="-90 0 0"  clickhandler="txt:youtube" material geometry></a-image>
+       <a-image　class="AAA" src="#AAA" position="1 -4 0" rotation="-90 0 0"  clickhandler material geometry></a-image>
           <a-entity
                     id="bowser-model"
                     scale="0.8 0.8 0.8"
@@ -123,6 +122,8 @@ AFRAME.registerComponent('clickhandler', {
                     gesture-handler
                 ></a-video>
  
+                 <a-entity cursor="rayOrigin: mouse"></a-entity>  
+
          </a-marker>
 
 </a-scene>
