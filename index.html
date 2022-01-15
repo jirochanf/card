@@ -6,6 +6,7 @@
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    
     <script>
         //video表示スクリプト
             AFRAME.registerComponent('videohandler', {
@@ -23,12 +24,12 @@
                 },
             });
         </script>
-    
     </head>
-    <link rel="stylesheet" href="button.css">
-    <body style="margin : 0px; overflow: hidden;">
-        
-<a-scene
+ <link rel="stylesheet" href="button.css">
+
+<body style="margin : 0px; overflow: hidden;">
+
+        <a-scene
             vr-mode-ui="enabled: false"
             loading-screen="enabled: false;"
             arjs='sourceType: webcam; debugUIEnabled: false;'
@@ -41,8 +42,8 @@
         <img id="AAA" src="assets/youtube.png">
         <img id="BBB" src="assets/tel.jpeg">
         <img id="CCC" src="assets/image.jpg">
-        <a-asset-item id="animated-asset" src="assets/benz.gltf"></a-asset-item> 
-        <video
+        <a-asset-item id="animated-asset" src="assets/benz.gltf"></a-asset-item>
+             <video
                     id="vid"
                     src="assets/happy.mp4"
                     preload="auto"
@@ -54,40 +55,62 @@
                     muted
                     playsinline
                 ></video>
-        </a-assets>    
+            
+      </a-assets>    
     
       <a-marker preset="hiro">
-       　　　　　　<a-image　class="CCC" src="#CCC" position="0 0 0" rotation="-90 0 0" material geometry></a-image>
+          
+          <a-entity cursor="rayOrigin: mouse"></a-entity>
+          
+          <a-image class="AAA" src="#AAA" position="1 0 -1.5" rotation="-90 0 0" click-change material geometry></a-image>
+          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" click-change material geometry></a-image>
+          <a-image class="CCC" src="#CCC" position="1 0 1.5" rotation="-90 0 0" click-change material geometry></a-image>
           <a-entity
                     id="bowser-model"
                     scale="0.8 0.8 0.8"
-                          position="1 1 1"
+                    position="2 -2 -4"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
-                ></a-entity>
-           <a-video
+           ></a-entity> 
+          
+          <a-video
                     src="#vid"
                     scale="2 2 2"
-                    position="0 0 0"
+                    position="2 0 0"
                     rotation="-90 0 0"
                     class="clickable"
                     gesture-handler
                 ></a-video>
-          <a-entity cursor="rayOrigin: mouse"></a-entity>  
-         </a-marker>
-
+          
+            </a-marker>
+        
 </a-scene>
-               
-<div style="position: fixed; bottom: 50px;left:50px;">  
+        
+    <script>  
+        //クリック後のアクションスクリプト
+  AFRAME.registerComponent('click-change', {
+  init: function () {
+    this.el.addEventListener('click', function (event) {
+    //クリック時の処理
+    //window.location.href = "https://netken.info";    
+    });
+  }
+});        
+    </script>         
+        
+        
+<!--   画面下部にボタンを設置  -->
+    <div style="position: fixed; bottom: 50px;left:50px;">  
 <a href="" class="btn btn-gradient" onClick="window.open('https://netken.info/','_blank')">Hp</a>
 </div>
         
 <div style="position: fixed; bottom: 50px;left:200px;">
 <a href="tel:08065637911" class="btn btn-gradient" >Tel</a>
-</div>
+</div>    
+    
  
-</body>
+    </body>
     
 </html>
