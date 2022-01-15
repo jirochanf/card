@@ -83,8 +83,8 @@ AFRAME.registerComponent('change-url',{
           <a-entity cursor="rayOrigin: mouse"></a-entity>    
              
           <a-image class="AAA" src="#AAA" position="1 0 -1.5" rotation="-90 0 0" change-url　material geometry></a-image>
-          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url　material geometry></a-image>
-          <a-image class="CCC" src="#CCC" position="1 0 1.5" rotation="-90 0 0" change-url　 material geometry></a-image>
+<!--          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" change-url　material geometry></a-image>
+          <a-image class="CCC" src="#CCC" position="1 0 1.5" rotation="-90 0 0" change-url　 material geometry></a-image>    -->
           <a-entity
                     id="bowser-model"
                     scale="0.8 0.8 0.8"
@@ -111,20 +111,16 @@ AFRAME.registerComponent('change-url',{
 </a-scene>
         
 <div style="position: fixed; bottom: 50px;left:10px;">  
-<input type="image" id="mypage" src="assets/image.jpg" higth="100" width="72" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
+<input type="image" id="mypage" src="assets/image.jpg" higth="100" width="72" value="My HP" onClick="window.open('https://netken.info/','_blank')">
 </div>
     
         
-    <div style="position: fixed; bottom: 50px;left:100px;">
- <form>
-<input type="button" value="E-Mail" onclick="location.href='mailto:fujiwara@yomde.net'">
-</form>
-        
+        <div style="position: fixed; bottom: 50px;left:100px;">
+<input type="image" id="youtube" rc="assets/image.jpg" higth="100" width="72" value="youtube" onClick="window.open('https://www.youtube.com/channel/UCo9N_OGnzUTIResONM0MaBw','_blank')">
         </div>
+
         <div style="position: fixed; bottom: 50px;left:200px;">
- <form>
-<input type="button" value="Tel" onclick="location.href='tel:08065637911'">
-</form>
+<input type="image" id="tel" src="assets/tel.jpg" higth="100" width="72" value="Tel" onclick="location.href='tel:08065637911'">
         </div>
         
     </body>
