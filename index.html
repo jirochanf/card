@@ -110,15 +110,61 @@ AFRAME.registerComponent('change-url',{
 
 </a-scene>
         
+ *,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}       
+        
 <div style="position: fixed; bottom: 50px;left:10px;">  
 <input type="image" id="mypage" src="assets/image.jpg" higth="100" width="72" value="My HP" onClick="window.open('https://netken.info/','_blank')">
 </div>
-    
-        
-        <div style="position: fixed; bottom: 50px;left:100px;">
-<input type="image" id="youtube" rc="assets/youtube.png" higth="100" width="72" value="youtube" onClick="window.open('https://www.youtube.com/channel/UCo9N_OGnzUTIResONM0MaBw','_blank')">
-        </div>
 
+<a href="" class="btn btn--orange">PUSH</a>
+        
         <div style="position: fixed; bottom: 50px;left:200px;">
 <input type="image" id="tel" src="assets/tel.jpeg" higth="100" width="72" value="Tel" onclick="location.href='tel:08065637911'">
         </div>
