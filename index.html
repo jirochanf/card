@@ -28,6 +28,18 @@
         </script>
     </head>
 
+        <script>  
+        //クリック後のアクションスクリプト
+  AFRAME.registerComponent('click-change', {
+  init: function () {
+    this.el.addEventListener('click', function (event) {
+    //クリック時の処理
+    //window.location.href = "https://netken.info";    
+    });
+  }
+});        
+    </script>    
+
  <link rel="stylesheet" href="button.css">
 
 <body style="margin : 0px; overflow: hidden;">
@@ -109,17 +121,7 @@
         
 </a-scene>
         
-    <script>  
-        //クリック後のアクションスクリプト
-  AFRAME.registerComponent('click-change', {
-  init: function () {
-    this.el.addEventListener('click', function (event) {
-    //クリック時の処理
-    //window.location.href = "https://netken.info";    
-    });
-  }
-});        
-    </script>         
+     
         
         
 <!--   画面下部にボタンを設置  -->
