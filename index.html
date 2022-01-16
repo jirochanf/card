@@ -45,8 +45,20 @@
         <img id="CCC" src="assets/image.jpg">
         <a-asset-item id="animated-asset" src="assets/toy_biplane.gltf"></a-asset-item>
              <video
-                    id="vid"
+                    id="vid1"
                     src="assets/kao.mp4"
+                    preload="auto"
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
+            <video
+                    id="vid2"
+                    src="assets/happy.mp4"
                     preload="auto"
                     response-type="arraybuffer"
                     loop
@@ -75,7 +87,7 @@
                     gesture-handler
            ></a-entity> 
           <a-video
-                    src="assets/happy.mp4"
+                    src="#vid1"
                     scale="3 3 3"
                     position="-2 0 4"
                     rotation="-90 0 0"
@@ -83,9 +95,9 @@
                     gesture-handler
                 ></a-video>
           <a-video
-                    src="#vid"
+                    src="#vid2"
                     scale="2 2 2"
-                    position="0 0 4"
+                    position="5 0 4"
                     rotation="-90 0 0"
                     class="clickable"
                     gesture-handler
