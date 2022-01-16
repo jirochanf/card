@@ -25,8 +25,10 @@
             });
         </script>
     </head>
- 
-  <body style="margin : 0px; overflow: hidden;">
+
+ <link rel="stylesheet" href="button.css">
+
+<body style="margin : 0px; overflow: hidden;">
 
         <a-scene
             vr-mode-ui="enabled: false"
@@ -41,10 +43,10 @@
         <img id="AAA" src="assets/youtube.png">
         <img id="BBB" src="assets/tel.jpeg">
         <img id="CCC" src="assets/image.jpg">
-        <a-asset-item id="animated-asset" src="assets/benz.gltf"></a-asset-item>
+        <a-asset-item id="animated-asset" src="assets/toy_biplane.gltf"></a-asset-item>
              <video
                     id="vid"
-                    src="assets/happy.mp4"
+                    src="assets/kao.mp4"
                     preload="auto"
                     response-type="arraybuffer"
                     loop
@@ -61,23 +63,21 @@
           
           <a-entity cursor="rayOrigin: mouse"></a-entity>
           
-          <a-image class="AAA" src="#AAA" position="1 0 -1.5" rotation="-90 0 0" click-change material geometry></a-image>
-          <a-image class="BBB" src="#BBB" position="1 0 0" rotation="-90 0 0" click-change material geometry></a-image>
-          <a-image class="CCC" src="#CCC" position="1 0 1.5" rotation="-90 0 0" click-change material geometry></a-image>
+<!--          <a-image src="assets/image.jpg" position="-2 0 3" rotation="-90 0 0" scale="2 2 2"></a-image>     -->
           <a-entity
                     id="bowser-model"
-                    scale="0.8 0.8 0.8"
-                    position="2 -2 -4"
+                    scale="0.1 0.1 0.1"
+                    rotation="-90 0 0"
+                    position="0 0 0"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
            ></a-entity> 
-          
           <a-video
                     src="#vid"
-                    scale="2 2 2"
-                    position="2 0 0"
+                    scale="3 3 3"
+                    position="-4 0 4"
                     rotation="-90 0 0"
                     class="clickable"
                     gesture-handler
@@ -101,23 +101,14 @@
         
         
 <!--   画面下部にボタンを設置  -->
+    <div style="position: fixed; bottom: 50px;left:50px;">  
+<a href="" class="btn btn-gradient" onClick="window.open('https://netken.info/','_blank')">Hp</a>
+</div>
         
-    <div style="position: fixed; bottom: 50px;left:10px;">
-     <!--   <button type=“button” onclick="location.href='https://netken.info'">My Blog</button>  -->
-    <input type="button" name="mypage" id="mypage" value="My HP" onClick="window.open('https://netken.info/','_blank')" />
-    </div>
-        
-    <div style="position: fixed; bottom: 50px;left:100px;">
-    <form>
-    <input type="button" value="E-Mail" onclick="location.href='mailto:fujiwara@yomde.net'">
-    </form>
-        
-    </div>
-     <div style="position: fixed; bottom: 50px;left:200px;">
-     <form>
-    <input type="button" value="Tel" onclick="location.href='tel:08065637911'">
-    </form>
-     </div>
+<div style="position: fixed; bottom: 50px;left:200px;">
+<a href="tel:08065637911" class="btn btn-gradient" >Tel</a>
+</div>    
+    
  
     </body>
     
