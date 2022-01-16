@@ -76,8 +76,8 @@
       <a-marker preset="hiro">
           
           <a-entity cursor="rayOrigin: mouse"></a-entity>
-          
-<!--          <a-image src="assets/image.jpg" position="-2 0 3" rotation="-90 0 0" scale="2 2 2"></a-image>     -->
+	  <a-text value="サンプル" position="0 0 0" align="center"></a-text>  
+<!--      <a-image src="assets/image.jpg" position="-2 0 3" rotation="-90 0 0" scale="2 2 2"></a-image>     -->
           <a-entity
                     id="bowser-model"
                     scale="0.1 0.1 0.1"
@@ -94,7 +94,7 @@
                     position="-2 0 4"
                     rotation="-90 0 0"
                     class="clickable"
-                    gesture-handler
+                    click-change
                 ></a-video>
           <a-video
                     src="#vid2"
@@ -106,8 +106,7 @@
                 ></a-video>
        <a-entity text="value: move plane;"></a-entity>
 
-	     	<a-text value="サンプル" position="0 0 0" align="center"></a-text>    
-            </a-marker>
+		</a-marker>
         
 </a-scene>
         
