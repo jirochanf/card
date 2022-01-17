@@ -57,7 +57,7 @@
       <a-marker preset="hiro">
           
 	  <a-text value="サンプル" position="0 0 0" align="center"></a-text>  
-<!--      <a-image src="assets/image.jpg" position="-2 0 3" rotation="-90 0 0" scale="2 2 2"></a-image>   
+<!--      <a-image src="assets/image.jpg" position="-2 0 3" rotation="-90 0 0" scale="2 2 2"></a-image>   -->
           <a-entity
                     id="bowser-model"
                     scale="0.1 0.1 0.1"
@@ -67,7 +67,7 @@
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
-           ></a-entity>    -->
+           ></a-entity> 
           	<a-video
                     src="#vid1"
                     scale="2 2 2"
@@ -84,17 +84,8 @@
                     class="clickable"
                     ></a-video>
 		</a-marker>
-
-		<a-entity
-                    id="bowser-model"
-                    scale="0.05 0.05 0.05"
-                    rotation="0 90 90"
-                    position="0 0 -3"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    class="clickable"
-                    gesture-handler
-           	></a-entity>
+       	
+		<a-text value="Focus to Hiro" position="0 0 0" align="center"></a-text>  
 
 		<a-entity cursor="rayOrigin: mouse"></a-entity>
 		<a-entity text="value: move plane;"></a-entity>
