@@ -6,6 +6,10 @@
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+	<!-- Loads <model-viewer> for modern browsers: -->
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+	<!-- Loads <model-viewer> for old browsers like IE11: -->
+	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     <!-- support 3D text -->
     <script src="js/aframe-text-geometry-component.min.js"></script>
     <!-- 独自スクリプトの読み込み  -->
@@ -60,7 +64,7 @@
           
           <a-entity cursor="rayOrigin: mouse"></a-entity>
 	  <a-text value="サンプル" position="0 0 0" align="center"></a-text>  
-<!--      <a-image src="assets/image.jpg" position="-2 0 3" rotation="-90 0 0" scale="2 2 2"></a-image>     -->
+<!--      <a-image src="assets/image.jpg" position="-2 0 3" rotation="-90 0 0" scale="2 2 2"></a-image>   
           <a-entity
                     id="bowser-model"
                     scale="0.1 0.1 0.1"
@@ -70,7 +74,7 @@
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
-           ></a-entity> 
+           ></a-entity>    -->
           <a-video
                     src="#vid1"
                     scale="2 2 2"
@@ -89,7 +93,14 @@
        <a-entity text="value: move plane;"></a-entity>
 
 		</a-marker>
-        
+
+<model-viewer preload poster="assets/image.jpg" src="assets/toy_biplane.gltf" ios-src="assets/toy_biplane.usdz" 
+		scale="0.1 0.1 0.1"
+                    rotation="0 90 90"
+                    position="0 0 0"      
+	      auto-rotate camera-controls ar alt="3D Plane"></model-viewer>	
+			
+		
 </a-scene>
        
 <!--   画面下部にボタンを設置  -->
