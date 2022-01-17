@@ -7,7 +7,14 @@
     <title>untitled</title>
   </head>
   <body>
-    <a-scene>
+      <a-scene
+            vr-mode-ui="enabled: false"
+            loading-screen="enabled: false;"
+            arjs='sourceType: webcam; debugUIEnabled: false;'
+            id="scene"
+            embedded
+            gesture-detector
+        >
       <a-asset-item id="animated-asset" src="assets/toy_biplane.gltf"></a-asset-item>
       <a-marker preset="hiro">
       <a-entity
