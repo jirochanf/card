@@ -6,13 +6,7 @@
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-	<!-- Loads <model-viewer> for modern browsers: -->
-	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-	<!-- Loads <model-viewer> for old browsers like IE11: -->
-	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-    <!-- support 3D text -->
-    <script src="js/aframe-text-geometry-component.min.js"></script>
-    <!-- 独自スクリプトの読み込み  -->
+   <!-- 独自スクリプトの読み込み  -->
     <script src="etc.js"></script>
     <!-- 独自CSSの読み込み  -->
  <link rel="stylesheet" href="button.css">
@@ -62,7 +56,6 @@
     
       <a-marker preset="hiro">
           
-          <a-entity cursor="rayOrigin: mouse"></a-entity>
 	  <a-text value="サンプル" position="0 0 0" align="center"></a-text>  
 <!--      <a-image src="assets/image.jpg" position="-2 0 3" rotation="-90 0 0" scale="2 2 2"></a-image>   
           <a-entity
@@ -90,10 +83,10 @@
                     rotation="-90 0 0"
                     class="clickable"
                     ></a-video>
-       <a-entity text="value: move plane;"></a-entity>
 
 		</a-marker>
 
+		<a-entity cursor="rayOrigin: mouse"></a-entity>
 		          <a-entity
                     id="bowser-model"
                     scale="0.1 0.1 0.1"
@@ -104,6 +97,8 @@
                     class="clickable"
                     gesture-handler
            ></a-entity>
+
+		<a-entity text="value: move plane;"></a-entity>
 
 </a-scene>
        
