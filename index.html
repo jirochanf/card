@@ -11,6 +11,7 @@
 	    <video id="vkao" autoplay loop="true" muted="true" src="assets/kao.mp4"></video>
 	</a-assets>
     <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
+	    <a-camera cursor="rayOrigin: mouse;"></a-camera>
 <a-marker preset="hiro">
 	<a-image src="#kao-img" position="0 0 -6" rotation="-90 0 0" scale="2 2 2"></a-image>    
     <a-entity id="bowser-model" scale="0.1 0.1 0.1" rotation="0 90 90" position="3 0 -6" animation-mixer="loop: repeat"
