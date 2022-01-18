@@ -19,7 +19,7 @@
     <a-entity id="bowser-model" scale="0.1 0.1 0.1" rotation="0 90 90" position="3 0 -6" animation-mixer="loop: repeat"
       gltf-model="#animated-asset" class="clickable" gesture-handler></a-entity> 
 	<a-video src="#happy" width="5.2" height="2.8" position="2 0 -3" rotation="270 0 0" play="true"></a-video>
-    <a-image src="#youtube" click-change position="3 0 0" rotation="-90 0 0" scale="0.5 0.5 0.5"></a-image> 
+    <a-image src="#youtube" click-change position="3 0 0" rotation="-90 0 0" scale="1 1 1"></a-image> 
 <!--	<a-video src="#kao" width="2.6" height="1.4" position="3 0 -2" rotation="270 0 0" play="true"></a-video>  -->
 </a-marker>
      <a-entity camera></a-entity>
@@ -33,7 +33,7 @@
   	    <script>
 	  	AFRAME.registerComponent('click-change', {
   		init: function () {
-    		this.el.addEventListener('mouseup', function (event) {
+    		this.el.addEventListener('click', function (event) {
     		//クリック時の処理
 			window.location = 'https://www.youtube.com/watch?v=ca62zTGSLRw'
     		});
