@@ -18,6 +18,14 @@
 	<a-video src="#happy" width="5.2" height="2.8" position="2 0 -1" rotation="270 0 0" play="true"></a-video>
 <!--	<a-video src="#kao" width="2.6" height="1.4" position="3 0 -2" rotation="270 0 0" play="true"></a-video>  -->
    <a-text value="Welcome to My HomePage" position="1.5 0 0.5" align="center" rotation="-90 0 0" color="#DD4827"></a-text>
+<a-entity
+    id="button"
+    click-change
+    geometry="primitive: ring; radiusInner: 0.75; radiusOuter: 0.8"
+    material="color: white; side: double;"
+    raycaster="objects: .clickable"
+    >
+</a-entity>
 	    </a-marker>
      <a-entity camera></a-entity>
          </a-scene>
@@ -27,12 +35,17 @@
       v.play();
       });
     </script>
-    <script>
-      window.addEventListener('click', function () {
-       var v2 = document.querySelector('#kao-img');
-      v2.play();
-      });
-    </script>
+  <script>
+	  AFRAME.registerComponent('click-change', {
+  init: function () {
+    this.el.addEventListener('mouseup', function (event) {
+    //クリック時の処理
+    });
+  }
+});  
+	  </script>	  
+	  
+	  
 	  <!--   画面下部にボタンを設置  -->
 <div style="position: fixed; bottom: 10px;left:50px;">  
 <a href="" class="btn btn-gradient" onClick="window.open('https://netken.info/','_blank')">Hp</a>
