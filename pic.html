@@ -9,8 +9,8 @@
 	</a-assets>
     <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
 	    <a-marker preset="hiro">
-		<a-video src="#happy" width="2.6" height="1.4" position="0 0 3" rotation="270 0 0" play="true"></a-video>
-    	     　 <a-video src="#kao" width="2.6" height="1.4" position="3 0 3" rotation="270 0 0" play="true"></a-video>
+		<a-video src="#happy" width="2.6" height="1.4" position="0 0 -3" rotation="270 0 0" play="true"></a-video>
+    	     　 <a-video src="#kao" width="2.6" height="1.4" position="3 0 -3" rotation="270 0 0" play="true"></a-video>
             </a-marker>
      <a-entity camera></a-entity>
          </a-scene>
@@ -21,9 +21,9 @@
       });
     </script>
     <script>
-      window.addEventListener('click2', function () {
-      var w = document.querySelector('#kao');
-      w.href = "https://www.yahoo.co.jp";
+      window.addEventListener('click', function () {
+      var target = document.querySelector('#kao');
+      target.href = "https://www.yahoo.co.jp";
       });
     </script>
 
