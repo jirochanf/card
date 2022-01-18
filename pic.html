@@ -13,7 +13,8 @@
     <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
 	    <a-marker preset="hiro">
 		<a-video src="#happy" width="2.6" height="1.4" position="0 0 -3" rotation="270 0 0" play="true"></a-video>
-		<a-image src="#hp" position="3 0 -3" rotation="-90 0 0" scale="2 2 2"></a-image>
+		<a-video src="#kao" width="2.6" height="1.4" position="2 0 -3" rotation="270 0 0" play="true"></a-video>
+		<a-image src="#hp" position="4 0 -3" rotation="-90 0 0" scale="2 2 2"></a-image>
             </a-marker>
      <a-entity camera></a-entity>
          </a-scene>
@@ -25,7 +26,8 @@
     </script>
     <script>
       window.addEventListener('click', function () {
-      window.open("https://netken.info") = document.querySelector('#hp');
+       var v = document.querySelector('#kao');
+      v.play();
       });
     </script>
 	  <!--   画面下部にボタンを設置  -->
