@@ -5,11 +5,11 @@
 	
   <body style='margin : 0px; overflow: hidden;'>
     	<a-assets>
-	    <img id="youtube" src="assets/youtube.png" click-change>
+	    <img id="youtube" src="assets/youtube.png" >
 	  </a-assets>
   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
         <a-marker preset="hiro">
-  	 <a-image src="#youtube"  position="1 0 -1" rotation="-90 0 0" scale="1 1 1"></a-image> 
+  	 <a-image src="#youtube"  position="1 0 -1" rotation="-90 0 0" scale="1 1 1" click-change></a-image> 
  	    </a-marker>
      <a-entity camera></a-entity>
   </a-scene>
