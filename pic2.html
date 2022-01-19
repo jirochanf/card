@@ -13,6 +13,8 @@
       <a-entity camera></a-entity>
     </a-scene>
     <script>
+	AFRAME.registerComponent('click-change', {
+                init: function () {    
 	var youtube = document.getElementById('youtube');
  	youtube.addEventListener('click', function() {
       	youtube = window.open('https://netken.info');
