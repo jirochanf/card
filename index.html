@@ -31,12 +31,10 @@
      		});
     	    </script>
   	    <script>
-	  	AFRAME.registerComponent('click-change', {
-  		init: function () {
-      window.addEventListener('click', function () {
-      var v = document.querySelector('#youtube');
-      v = window.open('https://netken.info');
-      });
+	     window.addEventListener('click-change', function () {
+      	var v = document.querySelector('#youtube');
+      	v = window.open('https://netken.info');
+     		 });
     </script>
 	  <!--   画面下部にボタンを設置  -->
 <div style="position: fixed; bottom: 10px;left:50px;">  
