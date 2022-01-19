@@ -15,9 +15,9 @@
   </a-scene>
     <script>
 	    AFRAME.registerComponent('click-change', {
-                init: function () {    
+                init: function () { 
       var link = document.querySelector('#youtube');
-      link.addEventListener('click', function () {
+			document.getElementById('youtube').addEventListener("click", function(event) {
      	link = window.open('https://netken.info');
       });
     </script>	
