@@ -14,8 +14,10 @@
      <a-entity camera></a-entity>
   </a-scene>
     <script> 
-    let pic = document.querySelector("#youtube");
-　   pic.addEventListener("click",function(){	    
+	    AFRAME.registerComponent('click-change', {
+                init: function () {
+    let pic = document.querySelector('#youtube');
+　   pic.addEventListener('click',function(){	    
       pic = window.open('https://netken.info');
       });
     </script>
