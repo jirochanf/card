@@ -13,18 +13,11 @@
  	    </a-marker>
      <a-entity camera></a-entity>
   </a-scene>
-    <script>
-	    	AFRAME.registerComponent('click-change', {
-                
-	function click-change() {
-        var spanText = document.getElementById('#youtube');
-         console.log(spanText);              // <span>
-         consol.log
-			//         window.open('https://netken.info');
-	}
-     document.getElementById('#youtube').addEventListener('click',click-change);
-		
-		});
-    </script>	
+    <script> 
+    let pic = document.querySelector("#youtube");
+　   pic.addEventListener("click",function(){	    
+      pic = window.open('https://netken.info');
+      });
+    </script>
 	</body>
 </html>
