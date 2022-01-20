@@ -4,23 +4,26 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
 	
   <body style='margin : 0px; overflow: hidden;'>
-    	<a-assets>
+    	  <a-assets>
 	    <img id="youtube" src="assets/youtube.png" >
 	  </a-assets>
+	  
   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
         <a-marker preset="hiro">
 		<a-image src="#youtube"  position="1 0 -1" rotation="-90 0 0" scale="1 1 1" click-change></a-image> 
- 	    </a-marker>
-     <a-entity camera></a-entity>
+ 	</a-marker>
+        <a-entity camera></a-entity>
   </a-scene>
+	  
     <script> 
-	    AFRAME.registerComponent("click-change", {
+	AFRAME.registerComponent("click-change", {
                 init: function () {
-    var pic = document.querySelector("#youtube");
-　   pic.addEventListener("click",function(){	    
-      pic = window.open('https://netken.info');
+        var pic = document.querySelector("#youtube");
+　        pic.addEventListener("click",function(){	    
+         pic = window.open('https://netken.info');
     }}
       });
     </script>
+	  
 	</body>
 </html>
