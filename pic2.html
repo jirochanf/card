@@ -13,15 +13,15 @@
 
       <a-marker preset="hiro">
         <a-image src="#youtube" click-change position="2 0 0" rotation="-90 0 0" scale="1 1 1"></a-image>
-	      <a-video src="#ar-video" width="2.6" height="1.4" position="0 0 0" rotation="270 0 0" play="true"></a-video>
-      </a-marker>
-      <a-entity camera></a-entity>
+     </a-marker>
+
+	    <a-entity camera></a-entity>
     </a-scene>
     
     <script>
       window.addEventListener('click', function () {
       var v = document.querySelector('#youtube');
-      v.window.open("https://netken.info");
+      v = window.open("https://netken.info");
       });
     </script>
     
