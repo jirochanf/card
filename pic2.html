@@ -18,6 +18,15 @@
                 material="color: black; shader: flat">
           </a-entity>
           <a-entity id="box" cursor-listener geometry="primitive: box" position="0 1 -5" material="color: blue"></a-entity>
+		  <a-entity
+    id="button"
+    click-change
+    geometry="primitive: ring; radiusInner: 0.75; radiusOuter: 0.8"
+    material="color: white; side: double;"
+    raycaster="objects: .clickable"
+    >
+</a-entity>
+		  
 	  
   </marker>
 	<a-entity camera></a-entity>
@@ -37,6 +46,14 @@
             });
         }
     });
+	AFRAME.registerComponent('click-change', {
+  init: function () {
+    this.el.addEventListener('click', function (event) {
+    //クリック時の処理
+	    window.open("https:netken.info");
+    });
+  }
+});
 </script>
 
 
