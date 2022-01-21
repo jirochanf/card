@@ -3,22 +3,7 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
 <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
 <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-
-    <body>
- <!--   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">    -->
-        <a-scene>
-        <a-entity camera look-controls>
-                <a-entity cursor="rayOrigin: mouse"
-                position="0 0 -1"
-                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                material="color: black; shader: flat">
-        </a-entity>
-        <a-entity id="box" cursor-listener geometry="primitive: box" position="0 1 -5" material="color: blue"></a-entity>
-
-            </a-scene>
-</body>
-    
-    <script>
+<script>
     AFRAME.registerComponent('cursor-listener', {
         init: function () {
             var lastIndex = -1;
@@ -32,5 +17,16 @@
     });
 </script>
 
-
+<body>
+    <a-scene>
+        <a-entity camera look-controls>
+                <a-entity cursor="rayOrigin: mouse"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">
+      </a-entity>
+        </a-entity>
+        <a-entity id="box" cursor-listener geometry="primitive: box" position="0 1 -5" material="color: blue"></a-entity>
+    </a-scene>
+</body>
 </html>
