@@ -21,6 +21,62 @@
        
 
     </a-scene>
+</body>
+    
+<script>
+    AFRAME.registerComponent('cursor-listener', {
+        init: function () {
+            var lastIndex = -1;
+            var COLORS = ['red', 'green', 'blue'];
+            this.el.addEventListener('mouseup', function (evt) {
+                lastIndex = (lastIndex + 1) % COLORS.length;
+                this.setAttribute('material', 'color', COLORS[lastIndex]);
+                console.log('I was clicked at: ', evt.detail.intersection.point);
+            });
+        }
+    });
+</script>
+
+<script>
+    AFRAME.registerComponent('click-change', {
+  init: function () {
+      var pic = document.querySelector('#youtube');
+    this.el.addEventListener('mouseup', function (event) {
+    //クリック時の処理
+        pic=window.open('https://netken.info');
+    });
+  }
+});
+</script>
+
+
+
+</html>
+
+
+<!--  AR 内の画像をクリックすると　遷移する  ->
+<html>
+<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+<!--  ar.jsで現実を映し出すことができる  -->
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+<body>
+    <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
+   
+      <a-entity camera look-controls>  
+                <a-entity cursor="rayOrigin: mouse"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.00; radiusOuter: 0.00"
+                material="color: black; shader: flat"> 
+      </a-entity>
+        </a-entity>
+        <a-entity id="box" cursor-listener geometry="primitive: box" position="0 1 -5" material="color: blue"></a-entity>
+　　
+        <a-marker preset="hiro">
+        <a-image id="youtube" click-change src="assets/youtube.png" position="0 0 -1" rotation="-90 0 0" scale="1 1 1"></a-image>
+        </a-marker>
+       
+
+    </a-scene>
     
 <script>
     AFRAME.registerComponent('cursor-listener', {
