@@ -16,6 +16,16 @@
         }
     });
 </script>
+<script>
+    AFRAME.registerComponent('click-change', {
+        init: function () {
+            var pic = document.querySelector('#youtube');
+　            pic.addEventListener('mouseup',function(){	    
+            pic = window.open('https://netken.info')
+            });
+        }
+    });
+</script>
 
 <body>
     <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
@@ -30,7 +40,7 @@
         <a-entity id="box" cursor-listener geometry="primitive: box" position="0 1 -5" material="color: blue"></a-entity>
 　　
         <a-marker preset="hiro">
-        <a-image src="assets/youtube.png" position="0 0 -1" rotation="-90 0 0" scale="1 1 1"></a-image>
+        <a-image id="youtube" click-change src="assets/youtube.png" position="0 0 -1" rotation="-90 0 0" scale="1 1 1"></a-image>
         </a-marker>
        
 
