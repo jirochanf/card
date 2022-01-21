@@ -1,3 +1,4 @@
+<!--  AR 内の画像をクリックすると　遷移する  ->
 <html>
 <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
 <!--  ar.jsで現実を映し出すことができる  -->
@@ -16,17 +17,19 @@
         }
     });
 </script>
+
 <script>
     AFRAME.registerComponent('click-change', {
   init: function () {
       var pic = document.querySelector('#youtube');
     this.el.addEventListener('mouseup', function (event) {
     //クリック時の処理
-        pic=window.open('https://www.youtube.com/channel/UCo9N_OGnzUTIResONM0MaBw');
+        pic=window.open('https://netken.info');
     });
   }
 });
 </script>
+
 
 <body>
     <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
