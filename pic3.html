@@ -18,13 +18,14 @@
 </script>
 <script>
     AFRAME.registerComponent('click-change', {
-        init: function () {
-            var pic = document.querySelector('#youtube');
-　            pic.addEventListener('mouseup',function(){	    
-            pic = window.open('https://netken.info')
-            });
-        }
+  init: function () {
+      var pic = document.querySelector('#youtube');
+    this.el.addEventListener('mouseup', function (event) {
+    //クリック時の処理
+        pic=window.open('https://netken.info');
     });
+  }
+});
 </script>
 
 <body>
