@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="button.css">
 <body style='margin : 0px; overflow: hidden;'>
         <a-assets>
-	    <img id="image" src="assets/omikuji.png">
+	    <img id="omikuji" src="assets/omikuji.png">
 	    <a-asset-item id="animated-asset" src="assets/toy_biplane.gltf"></a-asset-item>
             <video id="happy" autoplay loop="true" muted="true" src="assets/happy2.mp4"></video>
 	    <video id="vkao" autoplay loop="true" muted="true" src="assets/kao.mp4"></video>
@@ -44,7 +44,7 @@
 	<a-camera cursor="rayOrigin: mouse;"></a-camera>
    	
 	<a-marker preset="hiro">
-        <a-image id="image" src="#image" click-change position="0 0 -6" rotation="-90 0 0" scale="1.5 1.5 1.5" class="clickable"></a-image>
+        <a-image id="image" src="#omikuji" click-change position="0 0 -6" rotation="-90 0 0" scale="1.5 1.5 1.5"></a-image>
 	<a-video src="#happy" position="2 0 -3" width="5.2" height="2.8"  rotation="270 0 0" play="true" loop="true" muted="true"></a-video>
   	<a-text value="Welcome to My HomePage" position="2 0 " align="center" rotation="-90 0 0" color="#BCDE28"　scale="2 2 2"></a-text>
  <a-entity id="bowser-model" position="3 0 -6" scale="0.1 0.1 0.1" rotation="0 90 90"  animation-mixer="loop: repeat"
