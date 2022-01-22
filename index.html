@@ -8,9 +8,9 @@
       		var v = document.querySelector('#happy');
       		v.play();
      		});
-    	    </script>
+</script>
  	
-      	<script>
+<script>
     		AFRAME.registerComponent('click-change', {
   		init: function () {
       		var pic = document.querySelector('#youtube');
@@ -20,7 +20,7 @@
     		});
   		}
 		});
-	</script>	
+</script>	
 	
 <link rel="stylesheet" href="button.css">
 <body style='margin : 0px; overflow: hidden;'>
@@ -34,7 +34,8 @@
 	
 <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
 	<a-camera cursor="rayOrigin: mouse;"></a-camera>
-   <a-marker preset="hiro">
+   	
+	<a-marker preset="hiro">
 	<!--    <a-image src="#kao-img" position="0 0 -6" rotation="-90 0 0" scale="2 2 2"></a-image>    -->
        <a-image src="#youtube" click-change position="0 0 -6" rotation="-90 0 0" scale="1.5 1.5 1.5"></a-image>
 	<!--	<a-video src="#vkao" position="0 0 -6" width="2.6" height="1.4"  rotation="270 0 0" play="true"></a-video>  -->
@@ -42,8 +43,9 @@
       gltf-model="#animated-asset" class="clickable" gesture-handler></a-entity> 
 	<a-video src="#happy" position="2 0 -3" width="5.2" height="2.8"  rotation="270 0 0" play="true" loop="true" muted="true"></a-video>
   	<a-text value="Welcome to My HomePage" position="2 0 " align="center" rotation="-90 0 0" color="#BCDE28"　scale="2 2 2"></a-text>
-     </a-marker>
-     	<a-entity camera></a-entity>
+     	</a-marker>
+     	
+	<a-entity camera></a-entity>
  </a-scene>
 	
 	  <!--   画面下部にボタンを設置  -->
