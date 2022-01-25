@@ -10,11 +10,20 @@
   
   </head>
   <body>
-    <a-scene>
+	  <a-scene
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            id="scene"
+            embedded
+            gesture-detector
+        >
+         <a-entity camera></a-entity>
+    
       <a-assets>
         <img id="sky" src="assets/higashikou.jpg" />
       </a-assets>
-
       360°表示するためのタグ（radiusを変更で半径が変わります）
       <a-sky id="image-360" radius="10" src="#sky"> </a-sky>
       <model-viewer preload poster="assets/wait.jpeg" src="assets/toy_biplane.gltf" ios-src="assets/toy_biplane.usdz" 
