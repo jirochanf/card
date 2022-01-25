@@ -6,34 +6,11 @@
 <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
 <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-<script>
-      		window.addEventListener('click', function () {
-      		var v = document.querySelector('#happy');
-      		v.play();
-     		});
-</script>
-<script>
-    		AFRAME.registerComponent('click-change', {
-  		init: function () {
-      		var pic = document.querySelector('#omikuji');
-    		this.el.addEventListener('click', function (event) {
-    		//クリック時の処理
-        	pic=window.open('https://www.atago-jinja.com/lot/');
-    		});
-  		}
-		});
-</script>	
-<link rel="stylesheet" href="button.css">
+	
 <meta name="apple-mobile-web-app-capable" content="yes">
 <head>
 
 <body style='margin : 0px; overflow: hidden;'>
-        <a-assets>
-	    <img id="higashikou" src="assets/higashikou.jpg">
-	    <a-asset-item id="animated-asset" src="assets/toy_biplane.gltf"></a-asset-item>
-            <video id="happy" muted webkit-playsinline playsinline loop="true" src="assets/happy3.mp4"></video>
-	    <video id="vkao" autoplay loop="true" muted="true" src="assets/kao.mp4"></video>
-	</a-assets>
 	
 <a-scene>
 	<a-camera cursor="rayOrigin: mouse;"></a-camera>
@@ -49,7 +26,5 @@
 -->	
  	<a-entity camera></a-entity>
  </a-scene>	
-	
-
 	</body>
 </html>
