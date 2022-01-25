@@ -5,9 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-  	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-  </head>
+ </head>
   <body>
 	  <a-scene
             vr-mode-ui="enabled: false;"
@@ -23,10 +21,7 @@
         <img id="sky" src="assets/higashikou.jpg" />
       </a-assets>
       <a-sky id="image-360" radius="10" src="#sky"> </a-sky>
-        <a-text font="kelsonsans" value="Uwajima Higashi" width="6" position="-2.5 0.25 -1.5"
-              rotation="0 15 0"></a-text>
-    <model-viewer preload poster="assets/wait.jpeg" src="assets/toy_biplane.gltf" ios-src="assets/toy_biplane.usdz" 
-	    auto-rotate camera-controls ar alt="パノラマ写真"></model-viewer>	
-	  </a-scene>
+      <a-text font="kelsonsans" value="Uwajima Higashi" width="6" position="-2.5 0.25 -1.5"　　rotation="0 15 0"></a-text>
+      </a-scene>
   </body>
 </html>
