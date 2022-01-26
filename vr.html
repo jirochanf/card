@@ -10,6 +10,13 @@
     <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.js"></script>
     <script src="assets/virtual_tour.js"></script>
 <script>
+      		window.addEventListener('click', function () {
+      		var v = document.querySelector('#higashi');
+      		v.play();
+     		});
+</script>
+	  
+	  <script>
     		AFRAME.registerComponent('click-play', {
   		init: function () {
       		var v = document.querySelector('#higashi');
