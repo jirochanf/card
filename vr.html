@@ -13,9 +13,9 @@
     		AFRAME.registerComponent('click-play', {
   		init: function () {
       		var v = document.querySelector('#higashi');
-    		this.el.addEventListener('click', function (event) {
+    		this.el.addEventListener('mouseup', function (event) {
     		//クリック時の処理
-          v.play();
+                 v.play();
         	    		});
   		}
 		});
