@@ -11,14 +11,14 @@
     <script src="assets/virtual_tour.js"></script>
     <script>
       		window.addEventListener('click', function () {
-      		var v = document.querySelector('#zenkoku');
+      		var v = document.querySelector('#video');
       		v.play();
      		});
      </script>
   </head>
   <body>
 <a-assets>
-<video id="zenkoku" muted webkit-playsinline playsinline loop="true" src="assets/higashi2.mp4"></video>
+<video id="video" muted webkit-playsinline playsinline loop="true" src="assets/sctaikai.mp4"></video>
   <img id="jimu" src="assets/jimu.jpg">
 </a-assets>    
     
@@ -26,9 +26,9 @@
 <a-sky id="image-360" src="assets/jimu.jpg" radius="1000" rotation="-10 -120 -0.5" position="0 0 0"> </a-sky>
   
   
- <!--  <a-video src="#zenkoku" position="0 0 -15" width="10" height="7"  rotation="0 0 0"></a-video>  
+ <a-video src="#video" position="0 0 -15" width="15" height="10"  rotation="0 0 0"></a-video>  
  <a-curvedimage src="#jimu"> </a-curvedimage>
- -->
+ 
  
 </a-scene>
 
