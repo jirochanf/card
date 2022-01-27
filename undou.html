@@ -10,11 +10,17 @@
     <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.js"></script>
     <script src="assets/virtual_tour.js"></script>
     <script>
-      		window.addEventListener('click-play', function () {
-      		var v = document.querySelector('#video');
-      		v.play();
-     		});
-     </script>
+    		AFRAME.registerComponent('click-play', {
+  		init: function () {
+      		var v = document.querySelector('#higashi');
+    		this.el.addEventListener('mouseup', function (event) {
+    		//クリック時の処理
+                 v.play();
+        	    		});
+  		}
+		});
+</script>	
+    
   </head>
   <body>
 <a-assets>
