@@ -37,14 +37,26 @@
 <a-scene vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: " cursor="fuse: false; rayOrigin: mouse">
 <a-sky id="image-360" src="assets/higashikou.jpg" rotation="-10 -90 20" position="0 0 0"> </a-sky>
 <a-image width="10" height="3" position="-14 10 -15" rotation="0 0 0"  src="assets/title.png" onClick="window.open('https://www.youtube.com/channel/UCjFYmjM6d3zEZeitOoLvoIQ')"></a-image>
-<a-box src="assets/jimuicon.jpg" position="-12 0 -15" depth="2" height="4" width="4" rotation="20 20 0" onClick="window.open('https://jirochanf.github.io/card/jimu.html')">></a-box>
+<!-- <a-box src="assets/jimuicon.jpg" position="-12 0 -15" depth="2" height="4" width="4" 
+       rotation="20 20 0" onClick="window.open('https://jirochanf.github.io/card/jimu.html')">></a-box> -->
+<a-box src="assets/jimuicon.jpg" position="-12 0 -15" depth="2" height="4" width="4" 
+       rotation="20 20 0" same_window="link: https://jirochanf.github.io/card/jimu.html"></a-box>
 <a-video src="#higashi" click-olay position="0 0 -15" width="14" height="10"  rotation="0 0 0"></a-video>
 <a-entity  animation="property: object3D.position.y; to: 2.5; dir: alternate; dur: 1000; loop: true">	
 <a-gltf-model src="assets/toy_biplane.gltf" position="10 7 -15" rotation="0 90 180" scale="0.25 0.25 0.25" gesture-handler></a-gltf-model>
 </a-entity>
-<a-image width="6" height="8" position="12 0 -15" rotation="0 0 0"  src="assets/omoheba.jpg" onClick="window.open('https://www.youtube.com/watch?v=SLthD0Vk5z8')"></a-image>
-<a-image width="3" height="3" position="0 -8 -15" rotation="-20 -10 -10"  src="assets/yajirushi_undo.png" onClick="window.open('https://jirochanf.github.io/card/undou.html')"></a-image>
-<a-image width="4" height="2" position="12 -5.5 -15" rotation="0 0 0"  src="assets/omoheba.png"></a-image>
+<!--
+<a-image width="6" height="8" position="12 0 -15" rotation="0 0 0"  
+src="assets/omoheba.jpg" onClick="window.open('https://www.youtube.com/watch?v=SLthD0Vk5z8')"></a-image> 
+<a-image width="3" height="3" position="0 -8 -15" rotation="-20 -10 -10"  src="assets/yajirushi_undo.png" 
+onClick="window.open('https://jirochanf.github.io/card/undou.html')"></a-image>  
+-->
+<a-image width="6" height="8" position="12 0 -15" rotation="0 0 0"  src="assets/omoheba.jpg" 
+	 same_window="link: https://www.youtube.com/watch?v=SLthD0Vk5z8"></a-image>
+<a-image width="3" height="3" position="0 -8 -15" rotation="-20 -10 -10"  src="assets/yajirushi_undo.png" 
+same_window="link: https://jirochanf.github.io/card/undou.html"></a-image>
+
+	<a-image width="4" height="2" position="12 -5.5 -15" rotation="0 0 0"  src="assets/omoheba.png"></a-image>
 
 	<a-entity camera look-controls="reverseMouseDrag: true">
 
