@@ -12,7 +12,7 @@
     <script>
     		AFRAME.registerComponent('click-play', {
   		init: function () {
-      		var v = document.querySelector('#higashi');
+      		var v = document.querySelector('#video');
     		this.el.addEventListener('mouseup', function (event) {
     		//クリック時の処理
                  v.play();
@@ -30,7 +30,7 @@
 <a-scene vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: " cursor="fuse: false; rayOrigin: mouse">
 
   <a-text font="kelsonsans" value="Uwajima Higashi" width="24" height="20" position="5 -8 -10" rotation="0 0 0"></a-text>
-  <a-video src="#video"  click-play width="12" height="8"  position="10 7 -10" rotation="0 0 0"></a-video>  
+  <a-video src="#video" click-play width="12" height="8"  position="10 7 -10" rotation="0 0 0"></a-video>  
   <a-image src="assets/zenkei2.jpg" width="40" height="28" position="0 0 -15" rotation="0 0 0"></a-image>
   
   <a-entity camera look-controls="reverseMouseDrag: true">  
