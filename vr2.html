@@ -7,12 +7,12 @@
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.js"></script>
     <script src="assets/virtual_tour.js"></script>
-<script>
+<!-- <script>
       		window.addEventListener('click', function () {
       		var v = document.querySelector('#higashi');
       		v.play();
      		});
-</script>
+</script>  -->
 	  
 	  <script>
     		AFRAME.registerComponent('click-play', {
@@ -40,7 +40,20 @@
 <a-box src="assets/jimuicon.jpg" position="-12 0 -15" depth="2" height="4" width="4" 
        rotation="20 20 0" same_window="link: https://jirochanf.github.io/card/jimu.html"></a-box>
 <a-video src="#higashi" click-olay position="0 0 -15" width="14" height="10"  rotation="0 0 0"></a-video>
-<a-entity  animation="property: object3D.position.y; to: 2.5; dir: alternate; dur: 1000; loop: true">
+	
+<!--  <a-entity  animation="property: object3D.position.y; to: 2.5; dir: alternate; dur: 1000; loop: true">  -->
+<a-entity
+  geometry="primitive: plane; height: 5; width: 5"
+  material="color: red"
+  position="0 0 -10"
+  rotation="0 0 0"
+  animation="property: position;
+             to: -2 -2 -10;
+             dir: alternate;
+             dur: 1000;
+             loop: true;
+             easing: easeInOutSine">
+</a-entity>	
 <a-gltf-model src="assets/toy_biplane.gltf" position="10 7 -15" rotation="0 90 180" scale="0.25 0.25 0.25" 
 	      gesture-handler></a-gltf-model>
 </a-entity>
