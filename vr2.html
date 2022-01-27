@@ -7,13 +7,6 @@
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.js"></script>
     <script src="assets/virtual_tour.js"></script>
-<!-- <script>
-      		window.addEventListener('click', function () {
-      		var v = document.querySelector('#higashi');
-      		v.play();
-     		});
-</script>  -->
-	  
 	  <script>
     		AFRAME.registerComponent('click-play', {
   		init: function () {
@@ -43,11 +36,7 @@
 	
 <!--  <a-entity  animation="property: object3D.position.y; to: 2.5; dir: alternate; dur: 1000; loop: true">  -->
 <a-entity
-  geometry="primitive: plane; height: 5; width: 5"
-  material="color: red"
-  position="0 0 -10"
-  rotation="0 0 0"
-  animation="property: position;
+    animation="object3D.position.y;
              to: -2 -2 -10;
              dir: alternate;
              dur: 1000;
