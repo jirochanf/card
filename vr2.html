@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.js"></script>
     <script src="assets/virtual_tour.js"></script>
+<!--  <script>
+      		window.addEventListener('click', function () {
+      		var v = document.querySelector('#higashi');
+      		v.play();
+     		});
+</script> -->
+	  
 	  <script>
     		AFRAME.registerComponent('click-play', {
   		init: function () {
@@ -33,19 +42,19 @@
 <a-box src="assets/jimuicon.jpg" position="-12 0 -15" depth="2" height="4" width="4" 
        rotation="20 20 0" same_window="link: https://jirochanf.github.io/card/jimu.html"></a-box>
 <a-video src="#higashi" click-play position="0 0 -15" width="14" height="10"  rotation="0 0 0"></a-video>
-	
-<a-entity  animation="property: object3D.position.x; to:-10; dir: alternate; dur: 5000; loop: true"> 
-	
+
+	<a-entity  animation="property: object3D.position.x; to:-10; dir: alternate; dur: 5000; loop: true"> 
 <a-gltf-model src="assets/toy_biplane.gltf" position="10 7 -15" rotation="0 90 180" scale="0.25 0.25 0.25" 
 	      gesture-handler></a-gltf-model>
 </a-entity>
+
 <a-image width="6" height="8" position="12 0 -15" rotation="0 0 0"  src="assets/omoheba.jpg" 
 	 same_window="link: https://www.youtube.com/watch?v=SLthD0Vk5z8"></a-image>
 <a-image width="3" height="3" position="0 -8 -15" rotation="-90 -30 0"  src="assets/yajirushi_undo.png" 
 same_window="link: https://jirochanf.github.io/card/undou.html"></a-image>
 <a-image width="4" height="2" position="12 -5.5 -15" rotation="0 0 0"  src="assets/omoheba.png"></a-image>
 
-	<a-entity camera look-controls="reverseMouseDrag: true">
+<a-entity camera look-controls="reverseMouseDrag: true">
 
 </a-scene>
 </body>
