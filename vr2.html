@@ -34,6 +34,11 @@
 	  <a-assets>
 <video id="higashi" autoplay muted webkit-playsinline playsinline loop="true" src="assets/higashi2.mp4"></video>
 		  <img src=“assets/map3.jpg" usemap="#image-map"　width="384" height="128">
+<map name="image-map">
+    <area target="_top" alt="top" title="top" href="vr.html" coords="775,580" shape="rect">
+    <area target="" alt="jimu" title="jimu" href="jimu.html" coords="672,542" shape="rect">
+    <area target="" alt="undou" title="undou" href="undou.html" coords="" shape="rect">
+</map>											 
 </a-assets>    
     
 <a-scene vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true" cursor="fuse: false; rayOrigin: mouse">
@@ -58,19 +63,13 @@
 <a-image width="3" height="3" position="0 -8 -10" rotation="-90 -30 0"  src="assets/yajirushi_undo.png" 
 same_window="link: https://jirochanf.github.io/card/undou.html"></a-image>
 	
-<map name="image-map">
-    <area target="_top" alt="top" title="top" href="vr.html" coords="775,580" shape="rect">
-    <area target="" alt="jimu" title="jimu" href="jimu.html" coords="672,542" shape="rect">
-    <area target="" alt="undou" title="undou" href="undou.html" coords="" shape="rect">
-</map>
+
 										      
-<a-image id="map" src="#img-map" position="0 1.2 -3" scale="0.3 0.3 0.3"></a-image>	
+<a-image id="map" src="#img-map" position="15 2 -15" scale="0.3 0.3 0.3"></a-image>	
 
 <a-entity camera look-controls="reverseMouseDrag: true">
 
 </a-scene>
-						       
-<p><img src="assets/map3.jpg" height="300" width="400" alt="map画像" align="top" >map</p>
 						       
 </body>
 </html>
