@@ -65,3 +65,8 @@ a.btn-gradient:hover {
   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
   box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
 }
+
+img.map {
+width: 250px;
+height: 180px;
+}
