@@ -33,12 +33,19 @@
         });
         emailButton.addEventListener('click', function (evt) {
           text.setAttribute("value", "hello@softmind.tech");
+	  hiddenData = document.getElementById('hidden_data').value;
+          address = 'fujiwara@yomde.net';
+          subject = 'From NameCard';
+          body = 'Hello' + hiddenData;
+	  location.href = 'mailto:' + address + '?subject=' + subject + '&body=' + body;
           currentTab = 'email';
         });
+	      
         profileButton.addEventListener('click', function (evt) {
           text.setAttribute("value", "AR, VR solutions and consultation");
           currentTab = 'profile';
         });
+	      
         locationButton.addEventListener('click', function (evt) {
           console.log("loc");
           text.setAttribute("value", "Vancouver, Canada | Hong Kong");
