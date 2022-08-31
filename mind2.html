@@ -28,27 +28,22 @@
 
         let currentTab = '';
         webButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "https://softmind.tech");
+          text.setAttribute("value", "https://netken.info/");
           currentTab = 'web';
         });
         emailButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "hello@softmind.tech");
-	  hiddenData = document.getElementById('hidden_data').value;
-          address = 'fujiwara@yomde.net';
-          subject = 'From NameCard';
-          body = 'Hello' + hiddenData;
-	  location.href = 'mailto:' + address + '?subject=' + subject + '&body=' + body;
+          text.setAttribute("value", "fujiwara@yomde.net");
           currentTab = 'email';
         });
 	      
         profileButton.addEventListener('click', function (evt) {
-          text.setAttribute("value", "AR, VR solutions and consultation");
+          text.setAttribute("value", "WebAR Lesson");
           currentTab = 'profile';
         });
 	      
         locationButton.addEventListener('click', function (evt) {
           console.log("loc");
-          text.setAttribute("value", "Vancouver, Canada | Hong Kong");
+          text.setAttribute("value", "Istanbul, Spain | Thai");
           currentTab = 'location';
         });
 
@@ -285,7 +280,7 @@
           ></a-image>
 
           <a-image visible=false id="web-button" class="clickable" src="#icon-web" alpha-test="0.5" position="-0.14 -0.5 0" height="0.15" width="0.15"
-        	link="href: https://qiita.com/nonkapibara; title: nonkapibara;"
+        	link="href: https://netken.info/; title: My Home Page;"
           ></a-image>
 
           <a-image visible=false id="email-button" class="clickable" src="#icon-email"  position="0.14 -0.5 0" height="0.15" width="0.15"
