@@ -235,7 +235,7 @@
 
       <a-scene mindar-image="imageTargetSrc: ./assets/targets1.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
-          <img id="card" src="./assets/card.png" />
+          <img id="card" src="./assets/2022meishi.jpg" />
           <img id="icon-web" src="./assets/web.png" />
           <img id="icon-location" src="./assets/youtube.png" />
           <img id="icon-profile" src="./assets/kao2.png" />
@@ -261,7 +261,7 @@
 		
 <!-- ポートフォリ ライブラリー  -->		
           <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
-            <a-text value="Hi! I'm Jiro Fujiwara." color="black" align="center" width="2" position="0 0.4 0"></a-text>
+            <a-text value="Hi!  I'm Jiro." color="red" align="center" width="2" position="0 0.4 0"></a-text>
             <a-entity id="portfolio-item0">
               <a-video id="paintandquest-video-link" webkit-playsinline playsinline width="1" height="0.552" position="0 0 0"></a-video>
               <a-image id="paintandquest-preview-button" class="clickable" src="#paintandquest-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
@@ -281,7 +281,7 @@
           </a-entity>
 
 <!-- ボタン配置  -->	
-	 <a-image visible=false  class="clickable" src="./assets/2022meishi.jpg" position="0.7 0 0" height="1" width="1"
+	 <a-image visible=false  id="namecard" class="clickable" src="#card" position="0.7 0 0" height="1" width="1"
 	　　　　></a-image>
 		
           <a-image visible=false id="profile-button" class="clickable" src="#icon-profile" position="-0.42 -0.5 0" height="0.15" width="0.15"
