@@ -33,11 +33,6 @@
         });
         emailButton.addEventListener('click', function (evt) {
           text.setAttribute("value", "hello@softmind.tech");
-	  hiddenData = document.getElementById('hidden_data').value;
-          address = 'fujiwara@yomde.net';
-          subject = 'From NameCard';
-          body = 'Hello' + hiddenData;
-	  location.href = 'mailto:' + address + '?subject=' + subject + '&body=' + body;
           currentTab = 'email';
         });
 	      
@@ -120,7 +115,7 @@
             clearInterval(id);
             onDone();
           }
-          avatar.setAttribute("position", "0 -0.25 " + z);
+          avatar.setAttribute("position", "0 0.6" + z);
         }, 10);
       }
 
