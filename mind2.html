@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
+<!--  最新版を2ターゲットに  -->
+	<head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes">
 <!--  外部スクリプト読み込み　-->
@@ -246,7 +247,7 @@
       </div>
 
   <!-- ARシーン定義　-->
-  <a-scene mindar-image="imageTargetSrc: ./assets/targets1.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+  <a-scene mindar-image="imageTargetSrc: ./assets/targets2.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
           <img id="card" src="./assets/meishi.png" />
           <img id="icon-web" src="./assets/web.png" />
@@ -269,7 +270,8 @@
           <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
           </a-camera>
 
-          <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
+ <!-- target0 確認後--> 
+	  <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
 
 	<!--   <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>  -->
 
@@ -330,9 +332,21 @@
 
 <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -1 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
 -->
-		  
 		  </a-entity>
-</a-scene>
+
+	  
+<!-- target1 を確認後-->	  
+<a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 1">
+		
+<a-plane src="./assets/preview2.png" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+
+<a-gltf-model rotation="0 0 0 " position="-0.3 0.3 0" scale="0.05 0.05 0.05" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/raccoon/scene.gltf" animation-mixer>
+  
+</a-entity>
+	 
+	 
+	 
+	 </a-scene>
 		
 		
     </div>
