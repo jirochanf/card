@@ -57,8 +57,9 @@
 <!--3Dmodel-->
 <a-asset-item id="avatarModel" src="./3dmodel/gopro10.gltf"></a-asset-item>
 </a-assets>
+	
 <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
-      </a-camera>
+</a-camera>
 
 <!-- target0 確認後-->
 <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
@@ -98,15 +99,11 @@
         animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
                link="href: https://www.youtube.com/channel/UC262c4cdRkfrllw37mpUKOA/videos; title: Senior Travel;"
       ></a-image>
-<a-image visible="false"  id="namecard" class="clickable" src="#card" position="0.55 0.5 0" height="0.6" width="0.8"></a-image>	
-
-  <a-image  src="./assets/title3.png" position="-0.25 -0.7 0" height="0.9" width="0.9"></a-image>
 	
-  <a-gltf-model src="#avatarModel" position="-0.3 0.4 0" rotation="0 -180 0" scale="0.15 0.15 0.15" animation="property: rotation; to: 0 -100 0; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-gltf-model>
-
-<!--
-<a-gltf-model  id="3dmodel" src="./3dmodel/gopro10.gltf"  position="-0.3 0.8 0" rotation="-170 -150 0" scale="0.15 0.15 0.15"></a-gltf-model>			
--->
+<a-image visible="false"  id="namecard" class="clickable" src="#card" position="0.55 0.5 0" height="0.7" width="0.9"></a-image>	
+<a-gltf-model src="#avatarModel" position="-0.3 0.4 0" rotation="0 -180 0" scale="0.15 0.15 0.15" animation="property: rotation; to: -30 -180 0; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-gltf-model>
+	
+<a-image  src="./assets/title3.png" position="-0.25 -0.7 0" height="0.9" width="0.9"></a-image>
 	
 </a-entity>
 
