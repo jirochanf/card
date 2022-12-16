@@ -59,9 +59,11 @@
             const canplayWebm = testVideo.canPlayType( 'video/webm; codecs="vp8, vorbis"' );
             if (canplayWebm == "") {
               document.querySelector("#video-link2").setAttribute("src", "#video2-mp4");
+              document.querySelector("#video2-mp4").muted = false; 
               document.querySelector("#video2-mp4").play();
             } else {
               document.querySelector("#video-link2").setAttribute("src", "#video2-webm");
+              document.querySelector("#video2-webm").muted = false;
               document.querySelector("#video2-webm").play();
             }
           });
