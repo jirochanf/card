@@ -36,6 +36,8 @@
   <img id="preview2" src="https://jirochanf.github.io/card/assets/kyoto1.png" />
   <img id="preview3" src="https://jirochanf.github.io/card/assets/kyoto4.png" />
   <img id="ura" src="https://jirochanf.github.io/card/assets/ura_guide.png" />
+  <img id="mailto" src="https://jirochanf.github.io/card/assets/mailto.png" />
+  
 
 <!--3Dmodel-->
 <a-asset-item id="avatarModel" src="https://jirochanf.github.io/card/3dmodel/snowman.gltf"></a-asset-item>
@@ -59,13 +61,15 @@
         </a-entity>
 <!--  スライド　  -->
 	<a-entity id="panel-item1" visible="false">
-          <a-image class="clickable" src="#preview2" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
-          </a-image>
-        </a-entity>
-        <a-entity id="panel-item2" visible="false">
           <a-image class="clickable" src="#preview3" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
           </a-image>
         </a-entity>
+  <a-entity id="panel-item2" visible="false">
+          <a-image class="clickable" src="#mailto" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+          </a-image>
+        </a-entity>
+  
+  
 <!--  ボタン　  -->	
         <a-image visible="false" id="left-button" class="clickable" src="#icon-left" position="-0.7 0 0" height="0.15" width="0.15"></a-image>
         <a-image visible="false" id="right-button" class="clickable" src="#icon-right" position="0.7 0 0" height="0.15" width="0.15"></a-image>
