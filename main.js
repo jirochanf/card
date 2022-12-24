@@ -34,7 +34,7 @@
       portfolio.setAttribute("visible", true);
 
       const showPortfolioItem = (item) => {
-        for (let i = 0; i <= 2; i++) {
+        for (let i = 0; i <= 3; i++) {
           document.querySelector("#panel-item" + i).setAttribute("visible", i === item);
         }
       }
