@@ -1,0 +1,90 @@
+<html lang="ja">
+  <head>
+    <title>VR 学び舎 探検</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.js"></script>
+    <script src="assets/virtual_tour.js"></script>
+	<script>
+    		AFRAME.registerComponent('click-play', {
+  		init: function () {
+      		var v = document.querySelector('#higashi');
+    		this.el.addEventListener('mouseup', function (event) {
+    		//クリック時の処理
+                 v.play();
+        	    		});
+  		}
+		});
+	</script>
+	  
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	　　　　<script src="jquery.rwdImageMaps.min.js"></script>
+    
+	<script>
+		$(function() {
+  $('img[usemap]').rwdImageMaps();
+});
+    </script>
+
+<style type="text/css">
+.map {
+width:350px;
+height: auto;
+}
+</style>
+	  
+<!--     <link rel="stylesheet" href="button.css">   -->
+
+  </head>
+
+	<body>
+	  <a-assets>
+<video id="higashi" autoplay muted webkit-playsinline playsinline loop="true" src="assets/higashi2.mp4"></video>
+
+</a-assets>    
+
+
+										      
+<a-scene vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true" cursor="fuse: false; rayOrigin: mouse">
+
+<a-sky id="image-360" src="assets/higashikou.jpg" rotation="-10 -90 20" position="0 0 -20"> </a-sky>
+
+<a-image width="10" height="3" position="-14 10 -15" rotation="0 0 0"  src="https://jirochanf.github.io/card/assets/manabiya.png" onClick="window.open('https://www.youtube.com/channel/UCjFYmjM6d3zEZeitOoLvoIQ')"></a-image>
+
+<! -- <a-box src="assets/jimuicon.jpg" position="-12 0 -15" depth="2" height="4" width="4" 
+       rotation="20 20 0" same_window="link: https://jirochanf.github.io/card/jimu.html"></a-box>  -->
+
+<a-video src="#higashi" click-play position="-14 0 -15" width="14" height="10"  rotation="0 0 0"></a-video>
+
+<a-entity  animation="property: object3D.position.x; to:-10; dir: alternate; dur: 5000; loop: true"> 
+<a-gltf-model src="assets/toy_biplane.gltf" position="3 7 -15" rotation="0 90 180" scale="0.25 0.25 0.25" 
+	      gesture-handler></a-gltf-model>
+</a-entity>
+
+<a-image width="6" height="8" position="0 0 -15" rotation="0 0 0"  src="assets/omoheba.jpg" 
+	 same_window="link: https://www.youtube.com/watch?v=SLthD0Vk5z8"></a-image>
+
+<!--  <a-image width="4" height="2" position="12 -5.5 -15" rotation="0 0 0"  src="assets/omoheba.png"></a-image>  -->
+
+<a-image width="3" height="3" position="-2 -6 -10" rotation="-90 -30 0"  src="assets/yajirushi_undo.png" 
+same_window="link: https://jirochanf.github.io/card/undou.html"></a-image>
+
+<a-entity camera look-controls="reverseMouseDrag: true">
+
+</a-scene>
+	
+<div style="position:absolute; top:10px; right:10px"> 
+<img src="assets/map3.jpg"  usemap="#image-map" class="map">
+<map name="image-map">
+    <area target="" alt="undou" title="undou" href="undou.html" coords="652,120,853,256" shape="rect">
+    <area target="" alt="jimu" title="jimu" href="jimu.html" coords="390,311,450,354" shape="rect">
+    <area target="" alt="vr" title="vr" href="vr.html" coords="412,373,488,425" shape="rect">
+</map>
+</div>
+					      						       
+</body>
+</html>
