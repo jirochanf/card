@@ -42,15 +42,14 @@ height: auto;
   </head>
 
 	<body>
-	  <a-assets>
-<video id="higashi" autoplay muted webkit-playsinline playsinline loop="true" src="assets/higashi2.mp4"></video>
-
-</a-assets>    
 
 
 										      
 <a-scene vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true" cursor="fuse: false; rayOrigin: mouse">
-
+	  <a-assets>
+<video id="higashi" autoplay muted webkit-playsinline playsinline loop="true" src="assets/higashi2.mp4"></video>
+</a-assets> 
+	
 <a-sky id="image-360" src="assets/higashikou.jpg" rotation="-10 -90 20" position="0 0 -20"> </a-sky>
 
 <a-image width="10" height="3" position="-14 10 -15" rotation="0 0 0"  src="https://jirochanf.github.io/card/assets/manabiya.png" onClick="window.open('https://www.youtube.com/channel/UCjFYmjM6d3zEZeitOoLvoIQ')"></a-image>
