@@ -34,10 +34,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
-- name: Upload Pages Artifact
-  uses: actions/upload-pages-artifact@v3  # ← Pages専用のアクションを使用する
-  with:
-    path: ./dist                          # デプロイしたいディレクトリを指定
+      - name: Upload Pages Artifact
+      uses: actions/upload-pages-artifact@v7  # ← Pages専用のアクションを使用する
+      with:
+      path: ./dist                          # デプロイしたいディレクトリを指定
 
 
       - name: Deploy to GitHub Pages
