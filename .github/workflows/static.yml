@@ -34,12 +34,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          # GitHub Pages expects a single directory to be uploaded
-          name: github-pages
-          path: '.'
+- name: Upload Pages Artifact
+  uses: actions/upload-pages-artifact@v3  # ← Pages専用のアクションを使用する
+  with:
+    path: ./dist                          # デプロイしたいディレクトリを指定
+
 
       - name: Deploy to GitHub Pages
         id: deployment
