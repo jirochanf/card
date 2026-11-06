@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MindAR Video AR</title>
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <!-- MindAR -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+      background: #000;
+    }
+    #status {
+      position: fixed;
+      top: 20px;
+      left: 10px;
+      right: 10px;
+      z-index: 1000;
+      padding: 12px;
+      color: white;
+      background: rgba(0,0,0,0.7);
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    #controls {
+      position: fixed;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    button {
+      padding: 14px 22px;
+      border: none;
+      border-radius: 30px;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #playButton {
+      display: none;
+      background: #e65100;
+    }
+    a-scene {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- ステータス表示 -->
+  <div id="status">
+    カメラを起動してください
+  </div>
+  <!-- 操作ボタン -->
+  <div id="controls">
+    <button id="startButton">
+      ARカメラを起動
+    </button>
+    <button id="playButton">
+      動画を再生
+    </button>
+  </div>
+
+  <!-- MindAR Scene -->
+  <a-scene
+    id="arScene"
+    mindar-image="
+      imageTargetSrc: ./assets/targets_barcero.mind;
+      autoStart: false;
+      uiLoading: no;
+      uiScanning: no;
+      uiError: no;
+    "
+    color-space="sRGB"
+    renderer="
+      colorManagement: true;
+      physicallyCorrectLights: true;
+    "
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false">
+    <!-- 動画素材 -->
+    <a-assets>
+      <video
+        id="arVideo"
+        src="./assets/2026europe.mp4"
+        preload="auto"
+        playsinline
+        webkit-playsinline
+        muted
+        loop
+        crossorigin="anonymous">
+      </video>
+
+    </a-assets>
+
+    <!-- カメラ -->
+    <a-camera
+      position="0 0 0"
+      look-controls="enabled: false">
+    </a-camera>
+
+    <!-- 認識対象画像 -->
+    <a-entity
+      id="target"
+      mindar-image-target="targetIndex: 0">
+      <!-- 認識画像の上に動画を表示 -->
+      <a-video
+        id="videoPlane"
+        src="#arVideo"
+        position="0 0 0.01"
+        rotation="0 0 0"
+        width="1"
+        height="0.5625"
+        visible="false">
+      </a-video>
+
+    </a-entity>
+  </a-scene>
+  <script>
+    // HTML要素取得
+    const scene = document.querySelector("#arScene");
+const target = document.querySelector("#target");
+    const video = document.querySelector("#arVideo");
+    const videoPlane = document.querySelector("#videoPlane");
+    const status = document.querySelector("#status");
+    const startButton = document.querySelector("#startButton");
+    const playButton = document.querySelector("#playButton");
+    // 状態管理
+
+    let isTargetFound = false;
+    let isStarted = false;
+
+    // ステータス表示
+
+    function showStatus(message) {
+      status.textContent = message;
+    }
+
+    // 動画再生
+
+    async function playARVideo() {
+      if (!isTargetFound) return;
+      video.muted = true;
+      videoPlane.setAttribute("visible", true);
+      try {
+        await video.play();
+        showStatus("画像を認識しました！動画再生中");
+        playButton.style.display = "none";
+      } catch (error) {
+        console.error("動画再生エラー:", error);
+        showStatus("動画再生ボタンを押してください");
+        playButton.style.display = "block";
+      }
+    }
+
+    // 動画停止
+
+    function pauseARVideo() {
+      video.pause();
+      videoPlane.setAttribute("visible", false);
+      playButton.style.display = "none";
+
+    }
+
+    // 画像を認識したとき
+
+    target.addEventListener("targetFound", () => {
+      console.log("Target Found");
+      isTargetFound = true;
+      showStatus("画像を認識しました！");
+      playARVideo();
+    });
+
+    // 画像を見失ったとき
+
+    target.addEventListener("targetLost", () => {
+      console.log("Target Lost");
+      isTargetFound = false;
+      pauseARVideo();
+      showStatus("画像を探しています...");
+
+    });
+
+    // AR準備完了
+
+    scene.addEventListener("arReady", () => {
+      console.log("AR Ready");
+      showStatus("カメラ起動完了！画像を映してください");
+    });
+
+    // ARエラー
+
+    scene.addEventListener("arError", (event) => {
+      console.error("AR Error:", event);
+      showStatus("カメラを起動できません。HTTPSとカメラ権限を確認してください");
+    });
+
+    // ARカメラ起動
+
+    startButton.addEventListener("click", async () => {
+      if (isStarted) return;
+      startButton.disabled = true;
+      showStatus("カメラを起動しています...");
+      // ユーザー操作中に動画再生を許可しておく
+      video.muted = true;
+      try {
+        await video.play();
+        video.pause();
+        video.currentTime = 0;
+      } catch (error) {
+        console.log("動画の事前再生は保留:", error);
+      }
+
+      try {
+        const arSystem = scene.systems["mindar-image-system"];
+        await arSystem.start();
+        isStarted = true;
+        startButton.style.display = "none";
+      } catch (error) {
+        console.error("Camera Start Error:", error);
+        showStatus("カメラを起動できませんでした");
+        startButton.disabled = false;
+      }
+
+    });
+
+    // 手動動画再生ボタン
+
+    playButton.addEventListener("click", () => {
+      if (isTargetFound) {
+        playARVideo();
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
