@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- A-Frameの読み込み -->
+    <script src="https://aframe.io"></script>
+    <!-- MindAR (A-Frame用) の読み込み -->
+    <script src="https://jsdelivr.net"></script>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: ./assets/targets_barcero.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <!-- 表示したい3Dモデルや画像、動画などを定義 -->
+        <a-asset-item id="avatarModel" src="https://jsdelivr.net"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- マーキングするターゲットのインデックス（0番目） -->
+      
+        <!-- マーカー上に表示する3Dオブジェクト（ここではサンプルモデル） -->
+        <a-gltf-model src="#avatarModel" position="0 0.4 0.1" scale="0.005 0.005 0.005" rotation="0 180 0">
+      
+    </a-scene>
+  </body>
+</html>
